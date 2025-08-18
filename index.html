@@ -232,28 +232,88 @@
     <!-- GALERÍA -->
     <section id="galeria" class="py-5">
         <div class="container">
-            <h5 class="mb-3">Fotos de los niños en su terapia</h5>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <img class="img-fluid rounded-3 shadow-sm" src="assets/img/galeria-1.jpg" alt="Galería 1">
+            <div class="text-center mx-auto" style="max-width: 600px;">
+                <h2 class="mb-3">Un Vistazo a Nuestro Día a Día</h2>
+                <p class="text-muted mb-5">Momentos que reflejan el esfuerzo, la alegría y el progreso de nuestros niños
+                    y niñas en sus terapias.</p>
+            </div>
+
+            <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <img src="assets/img/Foto5.jpg"
+                                    class="d-block w-100 rounded-3 shadow-sm" alt="...">
+                            </div>
+                            <div class="col-md-4 d-none d-md-block">
+                                <img src="assets/img/Foto6.jpg"
+                                    class="d-block w-100 rounded-3 shadow-sm" alt="...">
+                            </div>
+                            <div class="col-md-4 d-none d-md-block">
+                                <img src="assets/img/Foto7.jpg"
+                                    class="d-block w-100 rounded-3 shadow-sm" alt="...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <img src="assets/img/Foto8.jpg"
+                                    class="d-block w-100 rounded-3 shadow-sm" alt="...">
+                            </div>
+                            <div class="col-md-4 d-none d-md-block">
+                                <img src="assets/img/Foto9.jpg"
+                                    class="d-block w-100 rounded-3 shadow-sm" alt="...">
+                            </div>
+                            <div class="col-md-4 d-none d-md-block">
+                                <img src="assets/img/Foto10.jpg"
+                                    class="d-block w-100 rounded-3 shadow-sm" alt="...">
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="col-md-4">
-                    <img class="img-fluid rounded-3 shadow-sm" src="assets/img/galeria-2.jpg" alt="Galería 2">
-                </div>
-                <div class="col-md-4">
-                    <img class="img-fluid rounded-3 shadow-sm" src="assets/img/galeria-3.jpg" alt="Galería 3">
-                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
             </div>
         </div>
     </section>
 
     <!-- Sección ancla para ‘Latest’ (si se usa en el header) -->
-    <section id="latest" class="py-5 section-light">
-        <div class="container">
-            <h5 class="mb-3">Últimas novedades</h5>
-            <p class="text-muted">Contenido de ejemplo…</p>
+    <<section id="latest" class="py-5 section-dark">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+
+            <div class="col-lg-6">
+                <img src="assets/img/Foto11.jpg" class="img-fluid rounded-3 shadow-lg" alt="Carrera benéfica para recaudar fondos para CADEP">
+            </div>
+
+            <div class="col-lg-6">
+                <h6 class="text-primary text-uppercase">Evento Reciente</h6>
+                <h2 class="display-5 mb-3">¡Una Carrera por Sonrisas!</h2>
+                <p class="lead mb-4">
+                    El día de hoy, nuestra increíble comunidad de Guastatoya se unió en una carrera llena de energía para recaudar fondos y apoyar las terapias de nuestros niños. Gracias a la generosidad de cada corredor y patrocinador, estamos un paso más cerca de nuestras metas.
+                </p>
+                <a href="#" class="btn btn-light btn-lg">
+                    Ver Fotos del Evento
+                </a>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer (cargado desde /components/footer.html por main.js) -->
     <div id="site-footer"></div>
@@ -261,6 +321,8 @@
     <!-- Scripts -->
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/header.js"></script>
+    
 </body>
 
 </html>

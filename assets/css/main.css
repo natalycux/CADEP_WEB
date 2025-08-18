@@ -106,3 +106,40 @@
     font-size: 1.25rem; /* Ligeramente más grande que antes (equivale a 20px) */
     line-height: 1.7;   /* Mantenemos el espaciado cómodo entre líneas */
 }
+
+
+/*
+ * =========================================
+ * ESTILOS PARA LA SECCIÓN DE SERVICIOS
+ * =========================================
+*/
+
+.service-item {
+    transition: all 0.3s ease; /* Transición suave para el efecto hover */
+    height: 100%; /* Asegura que todas las tarjetas en una fila tengan la misma altura */
+}
+
+.service-item:hover {
+    transform: translateY(-8px); /* Mueve la tarjeta 8px hacia arriba */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; /* Aumenta la sombra para dar profundidad */
+}
+
+
+/*
+ * =========================================
+ * MEJORAS PARA EL CARRUSEL DE LA GALERÍA
+ * =========================================
+*/
+
+#galleryCarousel .carousel-control-prev,
+#galleryCarousel .carousel-control-next {
+    width: 5%; /* Hace el área de clic más pequeña */
+}
+
+#galleryCarousel .carousel-control-prev-icon,
+#galleryCarousel .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    border-radius: 50%; /* Lo hace circular */
+    padding: 1.2rem; /* Aumenta el tamaño del círculo */
+    background-size: 50%; /* Hace la flecha interior más pequeña */
+}
