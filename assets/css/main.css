@@ -1,0 +1,86 @@
+/*
+ * =========================================
+ * HERO - CARRUSEL CON FORMULARIO SUPERPUESTO
+ * =========================================
+*/
+
+/* 1. Contenedor principal */
+.hero-carousel-section {
+    position: relative; /* ESTO ES CLAVE: Crea el contexto para el posicionamiento absoluto */
+    width: 100%;
+    overflow: hidden; /* Evita desbordamientos inesperados */
+}
+
+/* 2. Estilos para las imágenes del carrusel */
+.carousel-image {
+    height: 70vh; /* Altura del carrusel (ajústalo a tu gusto) */
+    min-height: 500px;
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin deformarse */
+}
+
+/* Opcional: Capa oscura sobre las imágenes para mejorar legibilidad */
+.carousel-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Color negro con 30% de opacidad */
+}
+
+/* 3. El formulario superpuesto */
+.donation-form-overlay {
+    position: absolute; /* ESTO ES CLAVE: Saca el formulario del flujo normal */
+    z-index: 10;        /* Lo pone por encima del carrusel */
+    top: 50%;           /* Lo baja hasta la mitad */
+    right: 5vw;         /* Lo posiciona a la derecha (5% del ancho de la pantalla) */
+    transform: translateY(-50%); /* Lo sube la mitad de su propia altura para centrarlo perfectamente */
+    
+    width: 90%;         /* Ocupa el 90% del espacio en pantallas pequeñas */
+    max-width: 400px;   /* Pero nunca será más ancho de 400px */
+}
+
+/*
+ * =========================================
+ * RESPONSIVIDAD PARA MÓVILES
+ * =========================================
+*/
+@media (max-width: 991.98px) {
+    /* En pantallas pequeñas, el formulario ya no estará superpuesto */
+    
+    .carousel-image {
+        height: 50vh; /* Hacemos el carrusel un poco más bajo en móviles */
+        min-height: 400px;
+    }
+
+    .donation-form-overlay {
+        position: static; /* CLAVE: El formulario vuelve al flujo normal del documento */
+        transform: none;  /* Reseteamos la transformación */
+        max-width: 500px; /* Le damos un ancho máximo */
+        margin: -80px auto 2rem auto; /* Margen negativo para que se monte un poco sobre el carrusel y lo centramos */
+        z-index: 10;      /* Lo mantenemos por encima por si acaso */
+    }
+}
+
+
+/*
+ * =========================================
+ * MEJORA: Botones de donación proporcionales
+ * =========================================
+*/
+
+/* Le decimos al contenedor de los botones que se comporte como un
+  contenedor flexible. Bootstrap ya lo hace, pero esto lo asegura.
+*/
+.donation-form-overlay .btn-group {
+    display: flex;
+}
+
+/*
+  Esta es la regla mágica. Le decimos a cada botón (label) dentro
+  del grupo que crezca para ocupar una parte igual del espacio disponible.
+*/
+.donation-form-overlay .btn-group > label {
+    flex: 1; 
+}
