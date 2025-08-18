@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CADEP | Inicio</title>
+    <meta name="description" content="Fundación CADEP — apoyo y terapias para niños.">
+
+    <!-- Bootstrap + Icons (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Tus estilos -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+</head>
+
+<body>
+
+    <!-- Header (cargado desde /components/header.html por main.js) -->
+    <div id="site-header"></div>
+
+    <!-- HERO -->
+    <header class="hero py-5 section-light">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-8">
+                    <div
+                        class="ratio ratio-16x9 rounded-3 bg-white border d-flex align-items-center justify-content-center">
+                        <span class="text-muted">Imagen destacada / carrusel</span>
+                    </div>
+                    <p class="lead mt-3 text-center text-lg-start">Frase motivadora</p>
+                </div>
+                <div class="col-lg-4" id="donar">
+                    <div class="card shadow-sm donate-card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge rounded-pill text-bg-warning">One-time</span>
+                                <span class="badge rounded-pill text-bg-danger">Monthly</span>
+                            </div>
+
+                            <div class="d-flex gap-2 flex-wrap mb-3">
+                                <button class="btn btn-outline-secondary amount" data-value="3">$3</button>
+                                <button class="btn btn-outline-secondary amount" data-value="5">$5</button>
+                                <button class="btn btn-outline-secondary amount" data-value="20">$20</button>
+                                <button class="btn btn-outline-secondary amount" data-value="25">$25</button>
+                                <button class="btn btn-outline-secondary amount" data-value="100">$100</button>
+                            </div>
+
+                            <label class="form-label small">Ingresa una cantidad</label>
+                            <input type="number" class="form-control form-control-sm mb-3" id="donationInput"
+                                placeholder="Valor">
+                            <button class="btn btn-danger w-100">
+                                <i class="bi bi-heart-fill me-1"></i> DONATE
+                            </button>
+                            <div class="text-center mt-2">
+                                <img src="assets/img/payments.png" height="22" alt="Métodos de pago">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HISTORIA + TEXTO -->
+    <section id="historia" class="py-5">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-3 text-center">
+                    <img src="assets/img/logo-cadep-large.png" class="img-fluid" alt="CADEP logo grande">
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-1">LA HISTORIA DE CADEP</h5>
+                    <p class="text-muted small mb-1">Subheading</p>
+                    <p class="mb-1 small">Descripción de cómo empezaron…</p>
+                    <p class="small">Seguimiento de descripción…</p>
+                </div>
+                <div class="col-md-5">
+                    <h3 class="lh-sm">Información de CADEP, historias o datos que llamen la atención</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="py-5 section-beige">
+        <div class="container">
+            <h6 class="text-uppercase text-muted">Descripción de cómo se ayuda a los niños</h6>
+            <p class="mb-4">Los servicios que se ofrecen</p>
+
+            <div class="row g-4 row-cols-1 row-cols-md-3 row-cols-lg-6">
+                <div class="col">
+                    <div class="d-flex gap-2">
+                        <i class="bi bi-info-circle fs-5"></i>
+                        <div>
+                            <div class="fw-semibold">Fisioterapeuta</div>
+                            <div class="small text-muted">Descripción.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="d-flex gap-2">
+                        <i class="bi bi-hospital fs-5"></i>
+                        <div>
+                            <div class="fw-semibold">Área</div>
+                            <div class="small text-muted">Descripción.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="d-flex gap-2">
+                        <i class="bi bi-heart-pulse fs-5"></i>
+                        <div>
+                            <div class="fw-semibold">Título</div>
+                            <div class="small text-muted">Descripción.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="d-flex gap-2">
+                        <i class="bi bi-emoji-smile fs-5"></i>
+                        <div>
+                            <div class="fw-semibold">Título</div>
+                            <div class="small text-muted">Descripción.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="d-flex gap-2">
+                        <i class="bi bi-people fs-5"></i>
+                        <div>
+                            <div class="fw-semibold">Título</div>
+                            <div class="small text-muted">Descripción.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="d-flex gap-2">
+                        <i class="bi bi-stars fs-5"></i>
+                        <div>
+                            <div class="fw-semibold">Título</div>
+                            <div class="small text-muted">Descripción.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section id="galeria" class="py-5">
+        <div class="container">
+            <h5 class="mb-3">Fotos de los niños en su terapia</h5>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <img class="img-fluid rounded-3 shadow-sm" src="assets/img/galeria-1.jpg" alt="Galería 1">
+                </div>
+                <div class="col-md-4">
+                    <img class="img-fluid rounded-3 shadow-sm" src="assets/img/galeria-2.jpg" alt="Galería 2">
+                </div>
+                <div class="col-md-4">
+                    <img class="img-fluid rounded-3 shadow-sm" src="assets/img/galeria-3.jpg" alt="Galería 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección ancla para ‘Latest’ (si se usa en el header) -->
+    <section id="latest" class="py-5 section-light">
+        <div class="container">
+            <h5 class="mb-3">Últimas novedades</h5>
+            <p class="text-muted">Contenido de ejemplo…</p>
+        </div>
+    </section>
+
+    <!-- Footer (cargado desde /components/footer.html por main.js) -->
+    <div id="site-footer"></div>
+
+    <!-- Scripts -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="assets/js/main.js"></script>
+</body>
+
+</html>
