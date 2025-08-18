@@ -84,3 +84,25 @@
 .donation-form-overlay .btn-group > label {
     flex: 1; 
 }
+
+
+
+/*
+ * =======================================================
+ * MEJORA: Jerarquía de texto en la sección Historia
+ * =======================================================
+*/
+
+/* 1. Título principal "Historia de CADEP" más grande */
+#historia h5 {
+    font-size: 2.5rem; /* ¡Mucho más grande para un gran impacto! (equivale a 40px) */
+    font-weight: 700;  /* Asegura que el texto sea negrita (bold) */
+    margin-bottom: 0.5rem; /* Ajusta el espacio debajo del título */
+}
+
+/* 2. Párrafos de la historia un poco más grandes y legibles */
+/* Usamos :not(.text-muted) para no afectar al subtítulo "(Guastatoya, El Progreso)" */
+#historia p:not(.text-muted) {
+    font-size: 1.25rem; /* Ligeramente más grande que antes (equivale a 20px) */
+    line-height: 1.7;   /* Mantenemos el espaciado cómodo entre líneas */
+}
