@@ -11,9 +11,40 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Tu header iría aquí -->
-    <!-- ... -->
+    <!-- Tu header esta aquí -->
+    <header>
+    <nav id="mainNavbar" class="navbar navbar-expand-lg bg-white navbar-light border-bottom sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="assets/img/LogoCadep.png" alt="CADEP" height="125" />
+                <span class="fw-semibold logo-font">CADEP</span>
+            </a>
 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html#historia">QUÉ HACEMOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#servicios">QUIÉNES SOMOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#galeria">PENDIENTE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/who-we-are.html">PENDIENTE</a></li>
+                </ul>
+
+                <div class="d-flex gap-2">
+                    <a class="btn btn-lg btn-apadrinar" href="#">APADRINAR</a>
+
+                    <a class="btn btn-lg btn-donar" href="#">
+                        <i class="bi bi-heart-fill me-1"></i> DONAR
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+        <!--Final de Header-->
     <main class="main-content">
         <!-- Contenedor principal que centra todo el contenido de la página -->
         <div class="container">
@@ -84,8 +115,67 @@
         </div>
     </main>
 
-    <!-- Tu footer iría aquí -->
-    <!-- ... -->
+    <!-- Tu footer iría va aquí -->
+    <footer class="py-5 section-light border-top">
+  <div class="container">
+    <div class="row g-4">
+      <!-- Col 1: marca + redes -->
+      <div class="col-md-3">
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <img src="assets/img/LogoCadep.png" alt="CADEP" height="70">
+          <span class="fw-semibold">CADEP</span>
+        </div>
+        <div class="d-flex gap-3 fs-5">
+          <a class="text-dark" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a class="text-dark" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a class="text-dark" href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a class="text-dark" href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+        <small class="text-muted d-block mt-3">© <span id="year"></span> CADEP</small>
+      </div>
+
+      <!-- Col 2: Join us -->
+      <div class="col-md-3">
+        <h6 class="fw-semibold">JOIN US</h6>
+        <ul class="list-unstyled small m-0">
+          <li><a class="text-decoration-none text-muted" href="index.html#donar">Donar</a></li>
+          <li><a class="text-decoration-none text-muted" href="#">Misión</a></li>
+          <li><a class="text-decoration-none text-muted" href="#">Visión</a></li>
+          <li><a class="text-decoration-none text-muted" href="#">¿Cómo apadrinar?</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Quick links -->
+      <div class="col-md-3">
+        <h6 class="fw-semibold">QUICK LINKS</h6>
+        <ul class="list-unstyled small m-0">
+          <li><a class="text-decoration-none text-muted" href="pages/contacto.html">Contacto</a></li>
+          <li><a class="text-decoration-none text-muted" href="#">Preguntas frecuentes</a></li>
+          <li><a class="text-decoration-none text-muted" href="#">Colaboración</a></li>
+          <li><a class="text-decoration-none text-muted" href="#">Empleos</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Resources -->
+      <div class="col-md-3">
+        <h6 class="fw-semibold">Resources</h6>
+        <ul class="list-unstyled small m-0">
+          <li><a class="text-decoration-none text-muted" href="#">Blog</a></li>
+          <li><a class="text-decoration-none text-muted" href="#">Soporte</a></li>
+          <li><a class="text-decoration-none text-muted" href="#">Guías</a></li>
+          <li><a class="text-decoration-none text-muted" href="#">Biblioteca</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- pequeño script para el año (opcional si ya lo haces en main.js) -->
+  <script>
+    document.getElementById('year')?.replaceWith(new Date().getFullYear());
+  </script>
+</footer>
+    <!-- Final del footer -->
+
 
     <!-- Incluye los scripts de Bootstrap y el script personalizado -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
