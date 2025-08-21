@@ -1,0 +1,109 @@
+/* Estilos personalizados para la página */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.main-content {
+    background-color: white; /* El resto del contenido es blanco */
+}
+
+/* Estilo para los botones de patrocinio */
+.btn-green {
+    background-color: #5cb85c;
+    border-color: #5cb85c;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+.btn-green:hover {
+    background-color: #4cae4c;
+    border-color: #4cae4c;
+}
+
+.btn-outline-secondary {
+    border-color: #ccc;
+    color: #666;
+}
+
+.child-card {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    overflow: hidden;
+    position: relative; /* Necesario para posicionar el botón de detalles */
+}
+
+.child-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Contenedor de la imagen y los detalles, añadido para un posicionamiento correcto */
+.card-img-container {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%; /* La imagen ocupa el 100% de la altura del contenedor */
+    object-fit: cover;
+}
+
+/* Estilo para la imagen del niño destacado */
+.featured-child-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.apadrinamiento-section {
+    background-color: #e0f2f1;
+    padding: 50px 0;
+}
+
+/* Contenedor para la sección con fondo rosado, ocupa todo el ancho de la pantalla */
+.pink-bg-wrapper {
+    background-color: #fce4ec;
+}
+
+/* Estilos para la capa de detalles dinámica */
+.details-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Alínea el contenido al final para dejar espacio al botón de toggle */
+    align-items: flex-start; /* Alínea el contenido a la izquierda */
+    padding: 1rem;
+    padding-bottom: 2.5rem; /* Ajusta el espacio al fondo para que el botón de detalles no se superponga */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
+}
+
+.details-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.toggle-details {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 20;
+    font-size: 0.8rem;
+}
