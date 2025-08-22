@@ -1,0 +1,38 @@
+<!-- components/header-index.html -->
+<header>
+  <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/img/LogoCadep2.png" alt="CADEP Logo" height="45" class="me-2" />
+        <span class="fw-bold">CADEP</span>
+      </a>
+
+      <!-- Hamburguesa -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menú -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html#historia">Historia</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#galeria">Galería</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#latest">Eventos</a></li>
+        </ul>
+
+        <!-- Botones (solo en Home) -->
+        <div class="d-flex ms-lg-3 gap-2">
+          <a href="pages/apadrinar.html#donar" class="btn btn-outline-danger" id="btnDonarHeader">
+            <i class="bi bi-heart-fill me-1"></i> DONAR
+          </a>
+          <a href="pages/apadrinar.html" class="btn btn-warning" id="btnApadrinarHeader">
+            <i class="bi bi-person-hearts me-1"></i> Apadrinar
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,33 @@
+<header>
+    <nav id="mainNavbar" class="navbar navbar-expand-lg bg-white navbar-light border-bottom sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="assets/img/LogoCadep.png" alt="CADEP" height="125" />
+                <span class="fw-semibold logo-font">CADEP</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html#historia">QUÉ HACEMOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#servicios">QUIÉNES SOMOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#galeria">PENDIENTE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/who-we-are.html">PENDIENTE</a></li>
+                </ul>
+
+                <div class="d-flex gap-2">
+                    <a href="pages/apadrinar.html" class="btn btn-warning ms-lg-3" id="btnApadrinarHeader">Apadrinar</a>
+
+
+                    <a class="btn btn-lg btn-donar" href="index.html#donar">
+                        <i class="bi bi-heart-fill me-1"></i> DONAR
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

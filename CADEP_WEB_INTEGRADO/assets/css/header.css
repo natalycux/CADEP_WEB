@@ -1,0 +1,58 @@
+.logo-font {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+}
+
+.btn-donar {
+    background-color: #8CEAFB;
+    border-color: #8CEAFB;
+    color: #0c2d35;
+}
+
+.btn-donar:hover {
+    background-color: #69d3e6;
+    border-color: #69d3e6;
+    color: #0c2d35;
+}
+
+
+/* --- Botón APADRINAR (Sólido) --- */
+.btn-apadrinar {
+    background-color: #FFCC00; /* Tu color de fondo amarillo */
+    border-color: #FFCC00;     /* Borde del mismo color */
+    color: #332900;            /* Texto oscuro para buen contraste */
+}
+
+/* Efecto al pasar el mouse sobre el botón Apadrinar */
+.btn-apadrinar:hover {
+    background-color: #e6b800; /* Un tono de amarillo más oscuro */
+    border-color: #e6b800;
+    color: #332900;
+}
+
+/*
+ * =========================================
+ * ESTILO DEFINITIVO PARA NAVBAR QUE SE ENCOGE AL BAJAR
+ * =========================================
+*/
+
+/* 1. Transiciones suaves para que el cambio de tamaño no sea brusco */
+#mainNavbar {
+    transition: padding 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#mainNavbar .navbar-brand img {
+    transition: height 0.3s ease-in-out;
+}
+
+/* 2. Estilos que se aplican CUANDO el usuario ha bajado en la página */
+#mainNavbar.navbar-scrolled {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-bottom: none !important; 
+}
+
+#mainNavbar.navbar-scrolled .navbar-brand img {
+    height: 60px !important; /* El logo se hace más pequeño */
+}
