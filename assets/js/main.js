@@ -1,3 +1,5 @@
+alert('Hello from main.js');
+
 async function include(id, file){
     const el = document.getElementById(id);
     if(!el) return;
