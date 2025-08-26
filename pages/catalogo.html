@@ -3,35 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apadrinamiento de Niños</title>
-    <link rel="icon" type="image/png" href="assets/img/LogoCadep2.png" />
-    <meta name="description" content="Fundación CADEP — apoyo y terapias para niños.">
-
+    <title>Vista de Apadrinamiento de Niños</title>
     <!-- Incluye los CSS de Bootstrap y Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
     <!-- Vincula el archivo de estilos CSS externo -->
-<!-- Tus estilos -->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/header.css">
-    <link rel="stylesheet" href="assets/css/footer.css">
-    <link rel="stylesheet" href="assets/css/catalogo.css">
+    <link rel="stylesheet" href="assets/css/pagina.css"> <!-- Archivo CSS para los estilos específicos de esta página -->
 
 </head>
-
 <body>
-    <!-- Header (cargado desde /components/header.html por main.js) -->
+
+    <!-- Aquí se cargará el contenido de tu header -->
     <div id="site-header"></div>
 
-
- 
     <main class="main-content">
-
         <!-- Contenedor principal que centra todo el contenido de la página -->
         <div class="container">
             <!-- Sección del niño destacado con fondo rosado más ancho -->
@@ -47,7 +35,7 @@
                         <ul class="list-unstyled">
                             <li><i class="bi bi-star-fill text-warning me-2"></i><strong>Edad:</strong> 15</li>
                             <li><i class="bi bi-star-fill text-warning me-2"></i><strong>Fecha de cumpleaños:</strong> 22/11/2009</li>
-                            <li><i class="bi bi-star-fill text-warning me-2"></i><strong>País:</strong> Guatemala</li>
+                            <li><i class="bi bi-star-fill text-warning me-2"></i><strong>País:</strong> República Dominicana</li>
                         </ul>
                         <p>Solamente se requiere una persona para generar un cambio positivo y duradero en la vida de Frainelis. Tu donación mensual de $39 es invertida en la vida de algunos de los niños más vulnerables del mundo.</p>
                         <button class="btn btn-danger btn-lg mt-3 rounded-pill px-4">SPONSOR</button>
@@ -58,15 +46,15 @@
             <!-- Sección de búsqueda y tarjetas de niños -->
             <section class="py-5">
                 <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h2 class="h4 mb-0">Busca un niño que esté esperando un patrocinador como tú!</h2>
+                    <h2 class="h4 mb-0">Search for a child who is waiting for a sponsor like you!</h2>
                     <div class="dropdown">
                         <button class="btn btn-outline-secondary dropdown-toggle rounded-pill" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Busca por: Mayor tiempo esperando
+                            SORT BY: Waiting the longest
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Mayor tiempo esperando</a></li>
-                            <li><a class="dropdown-item" href="#">Edad</a></li>
-                            <li><a class="dropdown-item" href="#">Primer Nombre</a></li>
+                            <li><a class="dropdown-item" href="#">Waiting the longest</a></li>
+                            <li><a class="dropdown-item" href="#">Age</a></li>
+                            <li><a class="dropdown-item" href="#">First name</a></li>
                         </ul>
                     </div>
                 </div>
@@ -101,13 +89,14 @@
         </div>
     </main>
 
-  <!-- Footer (cargado desde /components/footer.html por main.js) -->
+    <!-- Aquí se cargará el contenido de tu footer -->
     <div id="site-footer"></div>
-
-    <!-- Scripts -->
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script defer src="assets/js/main.js"></script>
-    <script defer src="assets/js/header.js"></script>
-    <script defer src="assets/js/catalogo.js"></script>
+    
+    <!-- Incluye los scripts de Bootstrap y el script personalizado -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/catalogo.js"></script>
 </body>
 </html>

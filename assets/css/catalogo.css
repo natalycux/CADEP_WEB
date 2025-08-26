@@ -1,10 +1,12 @@
 /* Estilos personalizados para la página */
 body {
     font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa; /* Un color de fondo suave para el cuerpo */
 }
 
+/* El contenido principal será blanco para un buen contraste */
 .main-content {
-    background-color: white; /* El resto del contenido es blanco */
+    background-color: white;
 }
 
 /* Estilo para los botones de patrocinio */
@@ -26,23 +28,26 @@ body {
     color: #666;
 }
 
+/* Estilo de la tarjeta de cada niño */
 .child-card {
     border: none;
     border-radius: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
     overflow: hidden;
-    position: relative; /* Necesario para posicionar el botón de detalles */
+    position: relative;
+    cursor: pointer;
 }
 
+/* Efecto al pasar el cursor sobre la tarjeta */
 .child-card:hover {
     transform: translateY(-5px);
 }
 
-/* Contenedor de la imagen y los detalles, añadido para un posicionamiento correcto */
+/* Contenedor de la imagen para un posicionamiento correcto */
 .card-img-container {
     position: relative;
-    height: 280px;
+    height: 300px;
     overflow: hidden;
 }
 
@@ -50,60 +55,75 @@ body {
     width: 100%;
     height: 100%; /* La imagen ocupa el 100% de la altura del contenedor */
     object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-/* Estilo para la imagen del niño destacado */
-.featured-child-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 1rem;
+/* Efecto al pasar el cursor sobre la tarjeta, la imagen se agranda */
+.child-card:hover .card-img-top {
+    transform: scale(1.05);
 }
 
-.apadrinamiento-section {
-    background-color: #e0f2f1;
-    padding: 50px 0;
+/* Estilo del botón de detalles */
+.toggle-details {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease;
 }
 
-/* Contenedor para la sección con fondo rosado, ocupa todo el ancho de la pantalla */
-.pink-bg-wrapper {
-    background-color: #fce4ec;
+.toggle-details:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Estilos para la capa de detalles dinámica */
+/* Estilos de la capa de detalles que aparece */
 .details-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8); 
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Alínea el contenido al final para dejar espacio al botón de toggle */
-    align-items: flex-start; /* Alínea el contenido a la izquierda */
+    justify-content: flex-start;
+    align-items: flex-start;
     padding: 1rem;
-    padding-bottom: 2.5rem; /* Ajusta el espacio al fondo para que el botón de detalles no se superponga */
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 10;
+    pointer-events: none;
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+    border-radius: 1rem;
 }
 
+/* Clase para mostrar la capa de detalles */
 .details-overlay.show {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
 }
 
-.toggle-details {
-    position: absolute;
-    bottom: 0.5rem;
-    left: 0.5rem;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    z-index: 20;
-    font-size: 0.8rem;
+/* Estilo para el contenido de los detalles, para reducir el espacio entre líneas */
+.details-overlay .details-content {
+    width: 100%;
+}
+
+.details-overlay .details-content p {
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    text-align: left;
+}
+
+/* Estilo para el encabezado dentro de los detalles */
+.details-overlay .details-content h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    text-align: center; /* Título centrado */
 }
