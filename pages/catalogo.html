@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apadrinamiento de Niños</title>
+    <link rel="icon" type="image/png" href="assets/img/LogoCadep2.png" />
+    <meta name="description" content="Fundación CADEP — apoyo y terapias para niños.">
+
+    <!-- Incluye los CSS de Bootstrap y Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Vincula el archivo de estilos CSS externo -->
+<!-- Tus estilos -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/catalogo.css">
+
+</head>
+
+<body>
+    <!-- Header (cargado desde /components/header.html por main.js) -->
+    <div id="site-header"></div>
+
+
+ 
+    <main class="main-content">
+
+        <!-- Contenedor principal que centra todo el contenido de la página -->
+        <div class="container">
+            <!-- Sección del niño destacado con fondo rosado más ancho -->
+            <section class="py-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6 col-lg-5 text-center text-md-start mb-4 mb-md-0">
+                        <!-- En esta parte es donde se debe poner la foto del niño destacado -->
+                        <img src="https://placehold.co/600x600/66c2e3/ffffff?text=Frainelis" class="img-fluid featured-child-img" alt="Frainelis">
+                    </div>
+                    <div class="col-md-6 col-lg-7">
+                        <h1 class="display-4 fw-bold mb-3">Te presentamos a Frainelis</h1>
+                        <p class="lead">Con un ingreso familiar promedio de $597.00 al mes en su comunidad, las familias como la de Frainelis apenas ganan lo suficiente para cubrir las necesidades básicas.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-star-fill text-warning me-2"></i><strong>Edad:</strong> 15</li>
+                            <li><i class="bi bi-star-fill text-warning me-2"></i><strong>Fecha de cumpleaños:</strong> 22/11/2009</li>
+                            <li><i class="bi bi-star-fill text-warning me-2"></i><strong>País:</strong> Guatemala</li>
+                        </ul>
+                        <p>Solamente se requiere una persona para generar un cambio positivo y duradero en la vida de Frainelis. Tu donación mensual de $39 es invertida en la vida de algunos de los niños más vulnerables del mundo.</p>
+                        <button class="btn btn-danger btn-lg mt-3 rounded-pill px-4">SPONSOR</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de búsqueda y tarjetas de niños -->
+            <section class="py-5">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="h4 mb-0">Busca un niño que esté esperando un patrocinador como tú!</h2>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle rounded-pill" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Busca por: Mayor tiempo esperando
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Mayor tiempo esperando</a></li>
+                            <li><a class="dropdown-item" href="#">Edad</a></li>
+                            <li><a class="dropdown-item" href="#">Primer Nombre</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Contenedor para las tarjetas de los niños -->
+                <div id="children-cards-container" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+                    <!-- Las tarjetas se generarán aquí con JavaScript -->
+                </div>
+            </section>
+        </div>
+        
+        <!-- Esta sección se mantiene con su propio estilo para tener un fondo de color a todo el ancho -->
+        <div class="pink-bg-wrapper">
+            <div class="container">
+                <!-- Sección de "Qué es el apadrinamiento" -->
+                <section class="apadrinamiento-section">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <h2 class="display-6 fw-bold">¿Qué es el apadrinamiento de niños y jóvenes?</h2>
+                            <p class="lead">El apadrinamiento establece una conexión personal entre dos personas —un padrino con el deseo de ayudar y un niño con el deseo de superarse a pesar de su situación económica—.</p>
+                            <p>Nuestro programa de apadrinamiento equipa a los niños y adolescentes con habilidades laborales y de vida esenciales para romper el círculo vicioso de la pobreza para siempre.</p>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <img src="https://placehold.co/400x400/fff/000?text=Logo+y+Video" class="img-fluid" alt="Video Placeholder">
+                            <p class="mt-2 text-muted">
+                                opcional** un video de que es el padrinamiento y lo que eso ayuda
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+  <!-- Footer (cargado desde /components/footer.html por main.js) -->
+    <div id="site-footer"></div>
+
+    <!-- Scripts -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/header.js"></script>
+    <script defer src="assets/js/catalogo.js"></script>
+</body>
+</html>
