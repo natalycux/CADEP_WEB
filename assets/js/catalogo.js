@@ -11,12 +11,24 @@ const childrenData = [
     { name: "Daniela Sophia", image: "https://placehold.co/400x500/20c997/ffffff?text=Daniela", gender: "Female", age: 9, birthday: "03/11/2016", language: "Español", waitingDays: 150, country: "Ecuador" }
 ];
 
+// Variable para almacenar el niño principal actual
+let currentMainChild = {
+    name: "Frainelis",
+    image: "https://placehold.co/600x600/66c2e3/ffffff?text=Frainelis",
+    gender: "Female",
+    age: 15,
+    birthday: "22/11/2009",
+    language: "Español",
+    waitingDays: 365,
+    country: "República Dominicana"
+};
+
 // Función para crear el HTML de una tarjeta de niño
-function createChildCard(child) {
+function createChildCard(child, index) {
     const cardHtml = `
-        <div class="child-card card h-100 shadow-sm">
+        <div class="child-card card h-100 shadow-sm" data-child='${JSON.stringify(child).replace(/'/g, "&#39;")}'>
             <div class="card-img-container">
-                <img src="${child.image}" class="card-img-top" alt="Imagen de ${child.name}">
+                <img src="${child.image}" class="card-img-top child-image" alt="Imagen de ${child.name}">
                 <div class="details-overlay">
                     <div class="details-content">
                         <h4>Detalles de ${child.name}</h4>
@@ -28,7 +40,7 @@ function createChildCard(child) {
                         <p><strong>País:</strong> ${child.country}</p>
                     </div>
                 </div>
-                <div class="toggle-details rounded-pill" style="cursor: pointer;">
+                <div class="toggle-details rounded-pill">
                     + Detalles
                 </div>
             </div>
@@ -36,12 +48,83 @@ function createChildCard(child) {
                 <h5 class="card-title fw-bold">${child.name}</h5>
                 <p class="card-text text-muted mb-2">${child.country}</p>
                 <div class="d-grid gap-2">
-                    <button class="btn btn-green w-100 rounded-pill fw-bold">APADRINAR AHORA</button>
+                    <button class="btn btn-green w-100 rounded-pill fw-bold sponsor-btn" data-child-id="${index}">APADRINAR AHORA</button>
                 </div>
             </div>
         </div>
     `;
     return `<div class="col-12 col-md-6 col-lg-4 mb-4">${cardHtml}</div>`;
+}
+
+// Función para actualizar el niño principal
+function updateMainChild(child) {
+    document.getElementById('main-child-img').src = child.image;
+    document.getElementById('main-child-name').textContent = child.name;
+    document.getElementById('main-child-name2').textContent = child.name;
+    document.getElementById('main-child-age').textContent = child.age;
+    document.getElementById('main-child-birthday').textContent = child.birthday;
+    document.getElementById('main-child-country').textContent = child.country;
+    document.getElementById('main-child-desc').textContent = `Con un ingreso familiar promedio de $597.00 al mes en su comunidad, las familias como la de ${child.name} apenas ganan lo suficiente para cubrir las necesidades básicas.`;
+    
+    // Añadir animación de destacado
+    const mainSection = document.querySelector('.py-5');
+    mainSection.classList.add('highlight-animation');
+    setTimeout(() => {
+        mainSection.classList.remove('highlight-animation');
+    }, 1000);
+}
+
+// Función para intercambiar el niño principal
+function swapMainChild(newMainChild) {
+    // Guardar el niño principal actual
+    const oldMainChild = {...currentMainChild};
+    
+    // Actualizar el niño principal
+    currentMainChild = {...newMainChild};
+    updateMainChild(currentMainChild);
+    
+    // Encontrar y actualizar la tarjeta del niño que era principal
+    const childCards = document.querySelectorAll('.child-card');
+    childCards.forEach(card => {
+        const childData = JSON.parse(card.getAttribute('data-child').replace(/&#39;/g, "'"));
+        if (childData.name === newMainChild.name) {
+            // Reemplazar con el niño que era principal
+            const newCardHtml = createChildCard(oldMainChild);
+            const colElement = card.closest('.col-12');
+            colElement.outerHTML = newCardHtml;
+            
+            // Agregar el evento click a la nueva tarjeta
+            const newCard = document.querySelector(`.child-card[data-child='${JSON.stringify(oldMainChild).replace(/'/g, "&#39;")}']`);
+            if (newCard) {
+                newCard.addEventListener('click', function() {
+                    const childData = JSON.parse(this.getAttribute('data-child').replace(/&#39;/g, "'"));
+                    swapMainChild(childData);
+                });
+            }
+        }
+    });
+    
+    // Reasignar eventos a los botones de detalles
+    assignDetailEvents();
+}
+
+// Función para asignar eventos a los botones de detalles
+function assignDetailEvents() {
+    const detailsButtons = document.querySelectorAll('.toggle-details');
+    detailsButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevenir que el evento se propague al card
+            const card = button.closest('.child-card');
+            const overlay = card.querySelector('.details-overlay');
+            overlay.classList.toggle('show');
+            
+            if (overlay.classList.contains('show')) {
+                button.textContent = '- Detalles';
+            } else {
+                button.textContent = '+ Detalles';
+            }
+        });
+    });
 }
 
 // Espera a que el DOM esté completamente cargado antes de ejecutar el script
@@ -52,31 +135,48 @@ document.addEventListener('DOMContentLoaded', () => {
     // Verifica si el contenedor existe y si es así, genera las tarjetas
     if (container) {
         let cardsHtml = '';
-        childrenData.forEach(child => {
-            cardsHtml += createChildCard(child);
+        childrenData.forEach((child, index) => {
+            cardsHtml += createChildCard(child, index);
         });
         container.innerHTML = cardsHtml;
+        
+        // Agregar evento click a cada imagen de niño
+        const childImages = document.querySelectorAll('.child-image');
+        childImages.forEach(image => {
+            image.addEventListener('click', function(e) {
+                const card = this.closest('.child-card');
+                const childData = JSON.parse(card.getAttribute('data-child').replace(/&#39;/g, "'"));
+                swapMainChild(childData);
+            });
+        });
+        
+        // Agregar evento click a cada tarjeta (pero no a los botones)
+        const childCards = document.querySelectorAll('.child-card');
+        childCards.forEach(card => {
+            card.addEventListener('click', function(e) {
+                // No hacer nada si el clic fue en el botón de apadrinar
+                if (!e.target.closest('.sponsor-btn')) {
+                    const childData = JSON.parse(this.getAttribute('data-child').replace(/&#39;/g, "'"));
+                    swapMainChild(childData);
+                }
+            });
+        });
+        
+        // Agregar evento a los botones de apadrinar
+        const sponsorButtons = document.querySelectorAll('.sponsor-btn');
+        sponsorButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation(); // Evitar que el evento se propague a la tarjeta
+                const childId = this.getAttribute('data-child-id');
+                // Aquí va tu código para redirigir a la página de apadrinamiento
+                alert(`Redirigiendo a página de apadrinamiento para el niño con ID: ${childId}`);
+                // window.location.href = `apadrinar.html?id=${childId}`; // Ejemplo de redirección
+            });
+        });
+        
+        // Asignar eventos a los botones de detalles
+        assignDetailEvents();
     } else {
         console.error("No se encontró el contenedor de tarjetas.");
     }
-
-    // Selecciona todos los botones de "+ Detalles"
-    const detailsButtons = document.querySelectorAll('.toggle-details');
-    detailsButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Obtiene la tarjeta y la capa de detalles más cercana
-            const card = button.closest('.child-card');
-            const overlay = card.querySelector('.details-overlay');
-
-            // Alterna la clase 'show' para mostrar/ocultar la capa de detalles
-            overlay.classList.toggle('show');
-
-            // Cambia el texto del botón basado en la visibilidad de la capa
-            if (overlay.classList.contains('show')) {
-                button.textContent = '- Detalles';
-            } else {
-                button.textContent = '+ Detalles';
-            }
-        });
-    });
 });
