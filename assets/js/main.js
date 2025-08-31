@@ -1,9 +1,24 @@
-async function include(id, file){
-    const el = document.getElementById(id);
-    if(!el) return;
-    // CAMBIO CLAVE AQUÍ: Añadimos una "/" al inicio de la ruta
-    const html = await fetch(`/components/${file}`).then(r => r.text());
-    el.innerHTML = html;
-}
-include('site-header','header.html');
-include('site-footer','footer.html');
+document.addEventListener("DOMContentLoaded", function() {
+    // Cargar Header
+    fetch('components/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('site-header').innerHTML = data;
+        });
+
+    // Cargar Footer
+    fetch('components/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('site-footer').innerHTML = data;
+        });
+
+    // Cargar Modal de Donación
+    fetch('components/donation-modal.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('donation-modal-container').innerHTML = data;
+        });
+
+    // ... resto de tu código de main.js ...
+});
