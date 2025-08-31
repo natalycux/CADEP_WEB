@@ -56,3 +56,15 @@
 #mainNavbar.navbar-scrolled .navbar-brand img {
     height: 60px !important; /* El logo se hace más pequeño */
 }
+
+/* Agrega este código al final de tu archivo header.css */
+
+/* Estilos para el header fijo */
+#site-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1030; /* Un z-index alto para que se muestre sobre otro contenido */
+    background-color: white; /* Asegura que el header tenga un fondo y no sea transparente */
+    box-shadow: 0 2px 4px rgba(0,0,0,.1); /* Sombra sutil para separarlo del contenido */
+}
