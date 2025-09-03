@@ -1,0 +1,175 @@
+:root {
+    --primary-color: #66c2e3;
+    --secondary-color: #f8f9fa;
+    --accent-color: #5cb85c;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Header Space - AQUÍ DEBES PEGAR EL CONTENIDO DE TU HEADER */
+#site-header {
+    height: auto; /* Se ajustará al contenido de tu header */
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Cover Section - Más grande */
+.cover-section {
+    background-color: var(--primary-color);
+    background-image: linear-gradient(135deg, var(--primary-color) 0%, #87ceeb 100%);
+    height: 350px;
+    position: relative;
+    margin-bottom: 80px; /* Reducido de 100px a 80px (o según necesites) */
+}
+
+/* Si prefieres usar una imagen de fondo en lugar del color, descomenta las siguientes líneas y reemplaza la URL */
+/*
+.cover-section {
+    background-image: url('assets/images/portada-nino.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    position: relative;
+    margin-bottom: 100px;
+}
+*/
+
+.profile-image-container {
+    position: absolute;
+    bottom: -30px; /* Más cerca del borde inferior */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    text-align: center;
+}
+
+.profile-image {
+    width: 250px;
+    height: 250px;
+    border: 5px solid white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    background-color: #fff;
+    object-fit: cover;
+}
+
+/* Profile Info */
+.profile-info {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    margin-top: 40px; /* Aumentado de 20px a 40px */
+}
+
+.btn-donate {
+    background-color: var(--accent-color);
+    border: none;
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 30px;
+}
+
+.btn-donate:hover {
+    background-color: #4cae4c;
+    transform: translateY(-2px);
+}
+
+/* Stats Section */
+.stats-box {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 15px;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* About Sections */
+.about-section {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* How it works */
+.how-it-works {
+    background-color: var(--secondary-color);
+    padding: 60px 0;
+}
+
+.benefit-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 25px;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Footer Space - AQUÍ DEBES PEGAR EL CONTENIDO DE TU FOOTER */
+#site-footer {
+    height: auto; /* Se ajustará al contenido de tu footer */
+    background-color: #2c3e50;
+    margin-top: 60px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cover-section {
+        height: 250px;
+        margin-bottom: 60px; /* Ajustado según el nuevo valor */
+    }
+    
+    .profile-image-container {
+        bottom: -40px; /* Ajustado para dispositivos móviles */
+    }
+}
+
+@media (max-width: 576px) {
+    .cover-section {
+        height: 200px;
+        margin-bottom: 50px; /* Ajustado según el nuevo valor */
+    }
+    
+    .profile-image-container {
+        bottom: -30px; /* Ajustado para dispositivos móviles pequeños */
+    }
+}

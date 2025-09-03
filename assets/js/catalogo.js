@@ -1,26 +1,26 @@
 // Datos de ejemplo para los niños con campos adicionales
 const childrenData = [
-    { name: "Nestor Andrés", image: "https://placehold.co/400x500/007bff/ffffff?text=Nestor", gender: "Male", age: 11, birthday: "05/03/2014", language: "Español", waitingDays: 280, country: "Ecuador" },
-    { name: "Joany Marbelle", image: "https://placehold.co/400x500/dc3545/ffffff?text=Joany", gender: "Female", age: 2, birthday: "12/08/2023", language: "Español", waitingDays: 47, country: "Guatemala" },
-    { name: "Ramses", image: "https://placehold.co/400x500/28a745/ffffff?text=Ramses", gender: "Male", age: 11, birthday: "20/06/2014", language: "Español", waitingDays: 61, country: "Mexico" },
-    { name: "Thiago Andres", image: "https://placehold.co/400x500/17a2b8/ffffff?text=Thiago", gender: "Male", age: 8, birthday: "10/01/2017", language: "Español", waitingDays: 120, country: "Argentina" },
-    { name: "Deivis Gabriel", image: "https://placehold.co/400x500/ffc107/ffffff?text=Deivis", gender: "Male", age: 12, birthday: "01/05/2013", language: "Español", waitingDays: 240, country: "Perú" },
-    { name: "Yuri Esperanza", image: "https://placehold.co/400x500/6c757d/ffffff?text=Yuri", gender: "Female", age: 10, birthday: "15/09/2015", language: "Español", waitingDays: 180, country: "Chile" },
-    { name: "Maria Fernanda", image: "https://placehold.co/400x500/fd7e14/ffffff?text=Maria", gender: "Female", age: 7, birthday: "22/02/2018", language: "Español", waitingDays: 300, country: "Colombia" },
-    { name: "Sebastián José", image: "https://placehold.co/400x500/6f42c1/ffffff?text=Sebastián", gender: "Male", age: 5, birthday: "18/07/2020", language: "Español", waitingDays: 90, country: "Venezuela" },
-    { name: "Daniela Sophia", image: "https://placehold.co/400x500/20c997/ffffff?text=Daniela", gender: "Female", age: 9, birthday: "03/11/2016", language: "Español", waitingDays: 150, country: "Ecuador" }
+    { name: "Jose Hernandez", image: "assets/img/Foto10.jpg", gender: "Male", age: 73, birthday: "05/03/1952", language: "Español", waitingDays: 280, country: "Guatemala" },
+    { name: "Juanita de Paz", image: "assets/img/Foto3.jpg", gender: "Female", age: 2, birthday: "12/08/2023", language: "Español", waitingDays: 47, country: "Guatemala" },
+    { name: "Jeferson Ramirez", image: "assets/img/Foto2.jpg", gender: "Male", age: 6, birthday: "20/06/2019", language: "Español", waitingDays: 61, country: "Guatemala" },
+    { name: "Thiago Fernandez", image: "assets/img/Foto13.png", gender: "Male", age: 10, birthday: "10/01/2015", language: "Español", waitingDays: 120, country: "Guatemala" },
+    { name: "Carina Valdez", image: "assets/img/Foto12.png", gender: "Female", age: 15, birthday: "01/05/2010", language: "Español", waitingDays: 240, country: "Guatemala" },
+    { name: "Yuri Esperanza", image: "https://placehold.co/400x500/6c757d/ffffff?text=Yuri", gender: "Female", age: 10, birthday: "15/09/2015", language: "Español", waitingDays: 180, country: "Guatemala" },
+    { name: "Maria Fernanda", image: "https://placehold.co/400x500/fd7e14/ffffff?text=Maria", gender: "Female", age: 7, birthday: "22/02/2018", language: "Español", waitingDays: 300, country: "Guatemala" },
+    { name: "Sebastián José", image: "https://placehold.co/400x500/6f42c1/ffffff?text=Sebastián", gender: "Male", age: 5, birthday: "18/07/2020", language: "Español", waitingDays: 90, country: "Guatemala" },
+    { name: "Daniela Sophia", image: "https://placehold.co/400x500/20c997/ffffff?text=Daniela", gender: "Female", age: 9, birthday: "03/11/2016", language: "Español", waitingDays: 150, country: "Guatemala" }
 ];
 
 // Variable para almacenar el niño principal actual
 let currentMainChild = {
-    name: "Frainelis",
-    image: "https://placehold.co/600x600/66c2e3/ffffff?text=Frainelis",
-    gender: "Female",
+    name: "Alexander Juarez",
+    image: "assets/img/Foto5.jpg",  
+    gender: "Male",
     age: 15,
-    birthday: "22/11/2009",
+    birthday: "22/11/2018",
     language: "Español",
     waitingDays: 365,
-    country: "República Dominicana"
+    country: "Guatemala"
 };
 
 // Función para crear el HTML de una tarjeta de niño
