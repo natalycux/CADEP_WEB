@@ -2,13 +2,13 @@
 const childrenData = [
     { name: "Jose Hernandez", image: "assets/img/Foto10.jpg", gender: "Male", age: 73, birthday: "05/03/1952", language: "Español", waitingDays: 280, country: "Guatemala" },
     { name: "Juanita de Paz", image: "assets/img/Foto3.jpg", gender: "Female", age: 2, birthday: "12/08/2023", language: "Español", waitingDays: 47, country: "Guatemala" },
-    { name: "Jeferson Ramirez", image: "assets/img/Foto2.jpg", gender: "Male", age: 6, birthday: "20/06/2019", language: "Español", waitingDays: 61, country: "Guatemala" },
-    { name: "Thiago Fernandez", image: "assets/img/Foto13.png", gender: "Male", age: 10, birthday: "10/01/2015", language: "Español", waitingDays: 120, country: "Guatemala" },
-    { name: "Carina Valdez", image: "assets/img/Foto12.png", gender: "Female", age: 15, birthday: "01/05/2010", language: "Español", waitingDays: 240, country: "Guatemala" },
-    { name: "Yuri Esperanza", image: "https://placehold.co/400x500/6c757d/ffffff?text=Yuri", gender: "Female", age: 10, birthday: "15/09/2015", language: "Español", waitingDays: 180, country: "Guatemala" },
-    { name: "Maria Fernanda", image: "https://placehold.co/400x500/fd7e14/ffffff?text=Maria", gender: "Female", age: 7, birthday: "22/02/2018", language: "Español", waitingDays: 300, country: "Guatemala" },
-    { name: "Sebastián José", image: "https://placehold.co/400x500/6f42c1/ffffff?text=Sebastián", gender: "Male", age: 5, birthday: "18/07/2020", language: "Español", waitingDays: 90, country: "Guatemala" },
-    { name: "Daniela Sophia", image: "https://placehold.co/400x500/20c997/ffffff?text=Daniela", gender: "Female", age: 9, birthday: "03/11/2016", language: "Español", waitingDays: 150, country: "Guatemala" }
+    { name: "Conrado Capulo", image: "assets/img/Foto14.jpg", gender: "Male", age: 67, birthday: "20/06/2019", language: "Español", waitingDays: 61, country: "Guatemala" },
+    { name: "Roberto Chavez", image: "assets/img/Foto15.jpg", gender: "Male", age: 3, birthday: "10/12/2021", language: "Español", waitingDays: 120, country: "Guatemala" },
+    { name: "Hilda Cante",    image: "assets/img/Foto16.jpg", gender: "Female", age: 20, birthday: "01/05/2005", language: "Español", waitingDays: 240, country: "Guatemala" },
+    { name: "Yuri Esperanza", image: "assets/img/Foto12.png", gender: "Female", age: 15, birthday: "05/09/2010", language: "Español", waitingDays: 180, country: "Guatemala" },
+    { name: "Maria Fernanda", image: "assets/img/Foto1.jpg", gender: "Female", age: 7, birthday: "22/02/2018", language: "Español", waitingDays: 300, country: "Guatemala" },
+    { name: "Sebastián José", image: "assets/img/Foto18.jpg", gender: "Male", age: 5, birthday: "18/07/2020", language: "Español", waitingDays: 90, country: "Guatemala" },
+    { name: "Daniela Sophia", image: "assets/img/Foto19.jpg", gender: "Female", age: 9, birthday: "03/11/2016", language: "Español", waitingDays: 150, country: "Guatemala" }
 ];
 
 // Variable para almacenar el niño principal actual
@@ -64,6 +64,7 @@ function updateMainChild(child) {
     document.getElementById('main-child-age').textContent = child.age;
     document.getElementById('main-child-birthday').textContent = child.birthday;
     document.getElementById('main-child-country').textContent = child.country;
+    document.getElementById('main-child-name-desc').textContent = child.name;
     document.getElementById('main-child-desc').textContent = `Con un ingreso familiar promedio de $597.00 al mes en su comunidad, las familias como la de ${child.name} apenas ganan lo suficiente para cubrir las necesidades básicas.`;
     
     // Añadir animación de destacado
@@ -179,4 +180,46 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.error("No se encontró el contenedor de tarjetas.");
     }
+
+    // Redirección a perfil de niño con datos
+  
+    const sponsorBtn = document.getElementById('main-child-sponsor-btn');
+    if (sponsorBtn) {
+        sponsorBtn.addEventListener('click', function() {
+            // Recoger todos los datos del botón
+            const childData = {
+                name: this.getAttribute('data-child-name'),
+                age: this.getAttribute('data-child-age'),
+                birthday: this.getAttribute('data-child-birthday'),
+                country: this.getAttribute('data-child-country'),
+                image: this.getAttribute('data-child-image'),
+                gender: this.getAttribute('data-child-gender'),
+                waitingDays: this.getAttribute('data-child-waiting'),
+                personality: this.getAttribute('data-child-personality'),
+                interests: this.getAttribute('data-child-interests'),
+                income: this.getAttribute('data-child-income'),
+                siblings: this.getAttribute('data-child-siblings'),
+                living: this.getAttribute('data-child-living'),
+                language: this.getAttribute('data-child-language'),
+                studies: this.getAttribute('data-child-studies'),
+                code: this.getAttribute('data-child-code'),
+                walls: this.getAttribute('data-child-walls'),
+                roof: this.getAttribute('data-child-roof'),
+                floor: this.getAttribute('data-child-floor'),
+                water: this.getAttribute('data-child-water'),
+                internet: this.getAttribute('data-child-internet'),
+                phone: this.getAttribute('data-child-phone')
+            };
+            
+            // Guardar en localStorage para usar en la página de perfil
+            localStorage.setItem('childProfileData', JSON.stringify(childData));
+            
+            // Redirigir a la página de perfil
+            window.location.href = 'perfil-nino.html';
+        });
+    }
 });
+
+
+
+

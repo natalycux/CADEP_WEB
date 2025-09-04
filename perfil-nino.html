@@ -22,24 +22,25 @@
     
 <!-- Portada con fondo celeste más grande -->
 <section class="cover-section">
-    <div class="container position-relative">
-        <!-- Foto de perfil cuadrada y grande superpuesta sobre la portada -->
+    <div class="container position-relative h-100">
+        <!-- Foto de perfil circular superpuesta sobre la portada -->
         <div class="profile-image-container">
             <!-- Reemplazar con imagen real del niño -->
-            <img src="https://placehold.co/250x250/66c2e3/ffffff?text=Foto+Niño" class="profile-image" alt="Foto de perfil del niño">
+            <img src="assets/img/Foto1.jpg" class="profile-image" id="profile-child-image" alt="Foto de perfil del niño">
         </div>
     </div>
 </section>
     
-    <div class="container">
+    <div class="container main-content">
          <!-- Información principal del perfil -->
         <div class="row">
             <div class="col-md-8">
                 <div class="profile-info">
                     <div class="d-flex justify-content-between align-items-start mb-4">
                         <div>
-                            <h1 class="fw-bold">Carlos Rodríguez</h1>
-                            <p class="lead">Con tu apoyo, Carlos puede tener acceso a educación, alimentación adecuada y oportunidades para un futuro mejor.</p>
+                            <h1 class="fw-bold" id="profile-child-name">Carlos Rodríguez</h1>
+                            <p class="lead" id="profile-child-desc">Con tu apoyo, Carlos puede tener acceso a educación,
+                                 alimentación adecuada y oportunidades para un futuro mejor.</p>
                         </div>
                         <div class="d-flex">
                             <button class="btn btn-donate me-2">APADRINAR AHORA</button>
@@ -51,15 +52,15 @@
                     
                     <div class="row text-center mb-4">
                         <div class="col-4 stat-item">
-                            <div class="stat-number">9</div>
+                            <div class="stat-number" id="profile-child-age">9</div>
                             <div class="stat-label">Años</div>
                         </div>
                         <div class="col-4 stat-item">
-                            <div class="stat-number">15/04/2015</div>
+                            <div class="stat-number" id="profile-child-birthday">15/04/2015</div>
                             <div class="stat-label">Fecha de Nacimiento</div>
                         </div>
                         <div class="col-4 stat-item">
-                            <div class="stat-number">128</div>
+                            <div class="stat-number" id="profile-child-waiting">128</div>
                             <div class="stat-label">Días de espera</div>
                         </div>
                     </div>
@@ -67,7 +68,7 @@
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <!-- BOTÓN CON ENLACE A OTRA PÁGINA -->
                         <!-- Cambia la URL por la dirección de tu página de catálogo de niños -->
-                        <a href="catalogo-ninos.html" class="btn btn-outline-primary">Buscar más Niños <i class="bi bi-arrow-right"></i></a>
+                        <a href="Pagina.html" class="btn btn-outline-primary">Buscar más Niños <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
                 
@@ -76,19 +77,19 @@
                     <h3 class="section-title">ACERCA DE MI Y MI FAMILIA</h3>
                     <div class="row">
                         <div class="col-md-6">
-                            <p><strong>Nombre:</strong> Carlos Rodríguez</p>
-                            <p><strong>Edacd:</strong> 9 años</p>
-                            <p><strong>Género:</strong> Masculino</p>
-                            <p><strong>Personalidad:</strong> Alegre, curioso y juguetón</p>
-                            <p><strong>Intereses:</strong> Fútbol, dibujo y animales</p>
+                            <p><strong>Nombre:</strong> <span id="about-child-name">Carlos Rodríguez</span></p>
+                            <p><strong>Edad:</strong> <span id="about-child-age">9 años</span></p>
+                            <p><strong>Género:</strong> <span id="about-child-gender">Masculino</span></p>
+                            <p><strong>Personalidad:</strong> <span id="about-child-personality">Alegre, curioso y juguetón</span></p>
+                            <p><strong>Intereses:</strong> <span id="about-child-interests">Fútbol, dibujo y animales</span></p>
                         </div>
                         <div class="col-md-6">
-                            <p><strong>Ingreso familiar:</strong> $120/mes</p>
-                            <p><strong>Hermanos:</strong> 2 hermanos menores</p>
-                            <p><strong>Vive con:</strong> Madre y abuela</p>
-                            <p><strong>Idioma:</strong> Español</p>
-                            <p><strong>Estudia:</strong> Sí, tercer grado</p>
-                            <p><strong>Código de apadrinamiento:</strong> NINO-2023-0875</p>
+                            <p><strong>Ingreso familiar:</strong> <span id="about-child-income">$120/mes</span></p>
+                            <p><strong>Hermanos:</strong> <span id="about-child-siblings">2 hermanos menores</span></p>
+                            <p><strong>Vive con:</strong> <span id="about-child-living">Madre y abuela</span></p>
+                            <p><strong>Idioma:</strong> <span id="about-child-language">Español</span></p>
+                            <p><strong>Estudia:</strong> <span id="about-child-studies">Sí, tercer grado</span></p>
+                            <p><strong>Código de apadrinamiento:</strong> <span id="about-child-code">NINO-2023-0875</span></p>
                         </div>
                     </div>
                 </div>
@@ -98,14 +99,14 @@
                     <h3 class="section-title">ACERCA DE MI HOGAR</h3>
                     <div class="row">
                         <div class="col-md-6">
-                            <p><strong>Paredes de la casa:</strong> Block y cemento</p>
-                            <p><strong>Techería de la casa:</strong> Lamina galvanizada</p>
-                            <p><strong>Piso de la casa:</strong> Cemento</p>
+                            <p><strong>Paredes de la casa:</strong> <span id="home-child-walls">Block y cemento</span></p>
+                            <p><strong>Techería de la casa:</strong> <span id="home-child-roof">Lamina galvanizada</span></p>
+                            <p><strong>Piso de la casa:</strong> <span id="home-child-floor">Cemento</span></p>
                         </div>
                         <div class="col-md-6">
-                            <p><strong>Fuente de agua:</strong> Tubería comunitaria</p>
-                            <p><strong>Acceso a internet:</strong> No</p>
-                            <p><strong>Acceso a línea telefónica:</strong> Sí, teléfono comunitario</p>
+                            <p><strong>Fuente de agua:</strong> <span id="home-child-water">Tubería comunitaria</span></p>
+                            <p><strong>Acceso a internet:</strong> <span id="home-child-internet">No</span></p>
+                            <p><strong>Acceso a línea telefónica:</strong> <span id="home-child-phone">Sí, teléfono comunitario</span></p>
                         </div>
                     </div>
                 </div>
@@ -118,7 +119,7 @@
                     
                     <!-- Espacio para imagen sobre pobreza en Guatemala -->
                     <div class="text-center my-4">
-                        <img src="https://placehold.co/600x300/e74c3c/ffffff?text=Imagen+de+Contexto" class="img-fluid rounded" alt="Imagen sobre pobreza en Guatemala">
+                        <img src="assets/img/Foto23.png" class="img-fluid rounded" alt="Imagen sobre pobreza en Guatemala">
                         <p class="text-muted mt-2">Imagen que muestra las condiciones de vida en comunidades vulnerables de Guatemala</p>
                     </div>
                 </div>
@@ -140,7 +141,7 @@
                     
                     <!-- Espacio para imagen de niño beneficiado -->
                     <div class="text-center my-4">
-                        <img src="https://placehold.co/300x200/5cb85c/ffffff?text=Niño+Beneficiado" class="img-fluid rounded" alt="Niño beneficiado por apadrinamiento">
+                        <img src="assets/img/Foto4.jpg" class="img-fluid rounded" alt="Niño beneficiado por apadrinamiento">
                         <p class="text-muted mt-2">Imagen de un niño participando en programas de apadrinamiento</p>
                     </div>
                     
@@ -185,7 +186,7 @@
                         
                         <!-- Espacio para imagen de niños beneficiados -->
                         <div class="text-center my-3">
-                            <img src="https://placehold.co/400x250/3498db/ffffff?text=Niños+Beneficiados" class="img-fluid rounded" alt="Niños participando en programas de apadrinamiento">
+                            <img src="assets/img/Foto8.jpg" class="img-fluid rounded" alt="Niños participando en programas de apadrinamiento">
                         </div>
                     </div>
                 </div>
@@ -200,7 +201,7 @@
                         
                         <!-- Espacio para imagen de interacción padrino-niño -->
                         <div class="text-center my-3">
-                            <img src="https://placehold.co/400x250/2ecc71/ffffff?text=Interacción+Padrino-Niño" class="img-fluid rounded" alt="Interacción entre padrino y niño">
+                            <img src="assets/img/Foto7.jpg" class="img-fluid rounded" alt="Interacción entre padrino y niño">
                         </div>
                     </div>
                 </div>

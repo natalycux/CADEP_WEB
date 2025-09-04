@@ -17,43 +17,37 @@ body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Cover Section - Más grande */
+/* Cover Section - Estilo similar a Facebook */
 .cover-section {
     background-color: var(--primary-color);
     background-image: linear-gradient(135deg, var(--primary-color) 0%, #87ceeb 100%);
     height: 350px;
     position: relative;
-    margin-bottom: 80px; /* Reducido de 100px a 80px (o según necesites) */
+    margin-bottom: 20px; /* Reducido significativamente */
+    overflow: hidden;
 }
-
-/* Si prefieres usar una imagen de fondo en lugar del color, descomenta las siguientes líneas y reemplaza la URL */
-/*
-.cover-section {
-    background-image: url('assets/images/portada-nino.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 300px;
-    position: relative;
-    margin-bottom: 100px;
-}
-*/
 
 .profile-image-container {
     position: absolute;
-    bottom: -30px; /* Más cerca del borde inferior */
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 10px; /* Cambiado de -60px a -45px (sube 15px más la foto) */
+    left: 30px;
     z-index: 1000;
     text-align: center;
 }
 
 .profile-image {
-    width: 250px;
-    height: 250px;
-    border: 5px solid white;
+    width: 210px; /* Aumentado de 168px a 176px (5% más) */
+    height: 210px; /* Aumentado de 168px a 176px (5% más) */
+    border: 4px solid white;
+    border-radius: 50%; /* Hace la imagen circular como Facebook */
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     background-color: #fff;
     object-fit: cover;
+}
+
+/* Ajuste del contenido principal */
+.main-content {
+    margin-top: 90px; /* Espacio para la foto de perfil superpuesta */
 }
 
 /* Profile Info */
@@ -62,7 +56,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     padding: 30px;
-    margin-top: 40px; /* Aumentado de 20px a 40px */
+    margin-top: 20px;
 }
 
 .btn-donate {
@@ -155,21 +149,56 @@ body {
 @media (max-width: 768px) {
     .cover-section {
         height: 250px;
-        margin-bottom: 60px; /* Ajustado según el nuevo valor */
+        margin-bottom: 15px;
     }
     
     .profile-image-container {
-        bottom: -40px; /* Ajustado para dispositivos móviles */
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -35px; /* Cambiado de -50px a -35px (sube 15px más en tablet) */
+    }
+    
+    .profile-image {
+        width: 147px;
+        height: 147px;
+    }
+    
+    .main-content {
+        margin-top: 55px; /* Reducido de 65px a 55px (compensa la subida) */
     }
 }
+    
+/* Ajuste del contenido principal */
+.main-content {
+    margin-top: 70px; /* Reducido de 80px a 70px (compensa la subida de la foto) */
+}
+    
+/* Ajuste del contenido principal */
+.main-content {
+    margin-top: 80px; /* Reducido de 90px a 80px (compensa la subida de la foto) */
+}
+
 
 @media (max-width: 576px) {
     .cover-section {
         height: 200px;
-        margin-bottom: 50px; /* Ajustado según el nuevo valor */
+        margin-bottom: 10px;
     }
     
     .profile-image-container {
-        bottom: -30px; /* Ajustado para dispositivos móviles pequeños */
+        bottom: -25px; /* Cambiado de -40px a -25px (sube 15px más en móvil) */
+    }
+    
+    .profile-image {
+        width: 126px;
+        height: 126px;
+    }
+    
+    .main-content {
+        margin-top: 45px; /* Reducido de 55px a 45px (compensa la subida) */
+    }
+    
+    .profile-info {
+        padding: 20px;
     }
 }
