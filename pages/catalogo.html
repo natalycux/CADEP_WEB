@@ -11,6 +11,7 @@
     <!-- Vincula el archivo de estilos CSS externo -->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/catalogo.css">
     <link rel="stylesheet" href="assets/css/pagina.css"> <!-- Archivo CSS para los estilos específicos de esta página -->
 
 </head>
@@ -23,38 +24,63 @@
         <!-- Contenedor principal que centra todo el contenido de la página -->
         <div class="container">
             <!-- Sección del niño destacado con fondo rosado más ancho -->
-            <section class="py-5">
-                <div class="row align-items-center">
-                    <div class="col-md-6 col-lg-5 text-center text-md-start mb-4 mb-md-0">
-                        <!-- En esta parte es donde se debe poner la foto del niño destacado -->
-                        <img src="https://placehold.co/600x600/66c2e3/ffffff?text=Frainelis" class="img-fluid featured-child-img" alt="Frainelis">
-                    </div>
-                    <div class="col-md-6 col-lg-7">
-                        <h1 class="display-4 fw-bold mb-3">Te presentamos a Frainelis</h1>
-                        <p class="lead">Con un ingreso familiar promedio de $597.00 al mes en su comunidad, las familias como la de Frainelis apenas ganan lo suficiente para cubrir las necesidades básicas.</p>
-                        <ul class="list-unstyled">
-                            <li><i class="bi bi-star-fill text-warning me-2"></i><strong>Edad:</strong> 15</li>
-                            <li><i class="bi bi-star-fill text-warning me-2"></i><strong>Fecha de cumpleaños:</strong> 22/11/2009</li>
-                            <li><i class="bi bi-star-fill text-warning me-2"></i><strong>País:</strong> República Dominicana</li>
-                        </ul>
-                        <p>Solamente se requiere una persona para generar un cambio positivo y duradero en la vida de Frainelis. Tu donación mensual de $39 es invertida en la vida de algunos de los niños más vulnerables del mundo.</p>
-                        <button class="btn btn-danger btn-lg mt-3 rounded-pill px-4">SPONSOR</button>
-                    </div>
+    <section class="py-5">
+        <div class="row align-items-center">
+             <div class="col-md-6 col-lg-5 text-center text-md-start mb-4 mb-md-0">
+                <!-- En esta parte es donde se debe poner la foto del niño destacado -->
+                    <img src="assets/img/Foto5.jpg" id="main-child-img" class="img-fluid featured-child-img" alt="Alexander Juarez">
                 </div>
-            </section>
+             <div class="col-md-6 col-lg-7">
+            <h1 class="display-4 fw-bold mb-3">Te presentamos a <span id="main-child-name">Alexander Juarez</span></h1>
+        <p class="lead" id="main-child-desc">Con un ingreso familiar promedio de $597.00 al mes en su comunidad, las familias como la de 
+            <span id="main-child-name-desc">Alexander</span> apenas ganan lo suficiente para cubrir las necesidades básicas.</p>
+                <li><i class="bi bi-star-fill text-warning me-2"></i><strong>Edad:</strong> <span id="main-child-age">15</span></li>
+                <li><i class="bi bi-star-fill text-warning me-2"></i><strong>Fecha de cumpleaños:</strong> <span id="main-child-birthday">22/11/2009</span></li>
+                <li><i class="bi bi-star-fill text-warning me-2"></i><strong>País:</strong> <span id="main-child-country">República Dominicana</span></li>
+            </ul>
+            <p>Solamente se requiere una persona para generar un cambio positivo y duradero en la vida de <span id="main-child-name2">Frainelis</span>. Tu donación mensual es invertida en la vida de algunos de los niños más vulnerables del mundo.</p>
+            
+<!-- Boton -->
+<button id="main-child-sponsor-btn" class="btn btn-danger btn-lg mt-3 rounded-pill px-4" 
+        data-child-name="Alexander Juarez" 
+        data-child-age="15" 
+        data-child-birthday="22/11/2009" 
+        data-child-country="República Dominicana" 
+        data-child-image="assets/img/Foto5.jpg"
+        data-child-gender="Masculino"
+        data-child-waiting="365"
+        data-child-personality="Alegre, curioso"
+        data-child-interests="Fútbol, dibujo"
+        data-child-income="120"
+        data-child-siblings="2 hermanos menores"
+        data-child-living="Madre y abuela"
+        data-child-language="Español"
+        data-child-studies="Sí, tercer grado"
+        data-child-code="NINO-2023-0875"
+        data-child-walls="Block y cemento"
+        data-child-roof="Lamina galvanizada"
+        data-child-floor="Cemento"
+        data-child-water="Tubería comunitaria"
+        data-child-internet="No"
+        data-child-phone="Sí, teléfono comunitario">
+    SPONSOR
+</button>
+        </div>
+    </div>
+</section>
 
             <!-- Sección de búsqueda y tarjetas de niños -->
             <section class="py-5">
                 <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h2 class="h4 mb-0">Search for a child who is waiting for a sponsor like you!</h2>
+                    <h2 class="h4 mb-0">Encuentra un niño que necesita ser apoyado!</h2>
                     <div class="dropdown">
                         <button class="btn btn-outline-secondary dropdown-toggle rounded-pill" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            SORT BY: Waiting the longest
+                            Buscar por: Tiempo de espera
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Waiting the longest</a></li>
-                            <li><a class="dropdown-item" href="#">Age</a></li>
-                            <li><a class="dropdown-item" href="#">First name</a></li>
+                            <li><a class="dropdown-item" href="#">Tiempo de espera</a></li>
+                            <li><a class="dropdown-item" href="#">Edad</a></li>
+                            <li><a class="dropdown-item" href="#">Primer Nombre</a></li>
                         </ul>
                     </div>
                 </div>
@@ -78,8 +104,8 @@
                             <p>Nuestro programa de apadrinamiento equipa a los niños y adolescentes con habilidades laborales y de vida esenciales para romper el círculo vicioso de la pobreza para siempre.</p>
                         </div>
                         <div class="col-md-6 text-center">
-                            <img src="https://placehold.co/400x400/fff/000?text=Logo+y+Video" class="img-fluid" alt="Video Placeholder">
-                            <p class="mt-2 text-muted">
+                                <img src="assets/img/Foto4.jpg" class="img-fluid rounded shadow" alt="Imagen sobre apadrinamiento">
+                                <p class="mt-3 text-muted">
                                 opcional** un video de que es el padrinamiento y lo que eso ayuda
                             </p>
                         </div>
@@ -99,4 +125,13 @@
     <script src="assets/js/script.js"></script>
     <script src="assets/js/catalogo.js"></script>
 </body>
-</html>
+</html> 
+
+
+
+
+
+
+
+
+
