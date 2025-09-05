@@ -146,10 +146,67 @@
  * =========================================
 */
 
-/* Estilos para la imagen del modal de donación */
-.modal-image {
+/* 1. Estilos del modal y su contenido */
+.modal-dialog.modal-xl .modal-content {
+    min-height: 85vh;
+    border-radius: var(--bs-modal-border-radius);
+    overflow: hidden; /* Muy importante para que la imagen no se salga de los bordes redondeados */
+}
+
+/* 2. El modal-body ahora es un contenedor GRID */
+.modal-dialog.modal-xl .modal-body {
+    display: grid;
+    /* En escritorio, creamos 2 columnas de igual tamaño */
+    grid-template-columns: 1fr 1fr; 
+    padding: 0 !important; /* Eliminamos cualquier padding para que el grid ocupe todo */
     height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border-top-left-radius: var(--bs-modal-inner-border-radius);
-    border-bottom-left-radius: var(--bs-modal-inner-border
+}
+
+/* 3. Área de la imagen (Columna Izquierda) */
+.modal-image-area {
+    display: none; /* Oculta por defecto */
+}
+/* Solo se muestra en pantallas de escritorio (más de 768px) */
+@media (min-width: 768px) {
+    .modal-image-area {
+        display: block;
+        height: 100%;
+    }
+    .modal-image-area img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* 4. Área del Formulario (Columna Derecha) */
+.modal-form-area {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    /* ESTA ES LA REGLA CLAVE que ahora sí funcionará */
+    justify-content: space-between; 
+}
+
+/* 5. Estilos específicos para el contenido del formulario */
+.modal-form-area .form-header {
+    text-align: center; /* Centra el título como pediste */
+}
+
+.modal-form-area .form-header h5 {
+    font-size: 1.8rem; /* Letra más grande para el título */
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+/* 6. Responsividad para móvil: El Grid cambia a 1 sola columna */
+@media (max-width: 767.98px) {
+    .modal-dialog.modal-xl .modal-body {
+        grid-template-columns: 1fr; /* Hacemos que solo haya una columna */
+    }
+    .modal-form-area {
+        padding: 1.5rem;
+        /* En móvil, le damos una altura mínima para que no se vea aplastado */
+        min-height: 70vh; 
+    }
+}
