@@ -140,76 +140,84 @@
     padding: 1.2rem;
 }
 
+
+
+
+
 /*
- * =========================================
- * ESTILOS PARA MODAL DE DONACIÓN
- * =========================================
+ * =======================================================
+ * ESTILOS PARA MODALES DE DONACIÓN
+ * =======================================================
 */
 
-/* 1. Estilos del modal y su contenido */
-.modal-dialog.modal-xl .modal-content {
+/* --- ESTILOS PARA EL PRIMER MODAL (donationModal) --- */
+
+/* 1. Contenedor del modal */
+#donationModal .modal-content {
     min-height: 85vh;
     border-radius: var(--bs-modal-border-radius);
-    overflow: hidden; /* Muy importante para que la imagen no se salga de los bordes redondeados */
+    overflow: hidden;
 }
 
-/* 2. El modal-body ahora es un contenedor GRID */
-.modal-dialog.modal-xl .modal-body {
+/* 2. Cuerpo del modal como Grid */
+#donationModal .modal-body {
     display: grid;
-    /* En escritorio, creamos 2 columnas de igual tamaño */
-    grid-template-columns: 1fr 1fr; 
-    padding: 0 !important; /* Eliminamos cualquier padding para que el grid ocupe todo */
-    height: 100%;
+    padding: 0 !important; 
+    grid-template-columns: 1fr; /* 1 columna en móvil */
 }
 
-/* 3. Área de la imagen (Columna Izquierda) */
-.modal-image-area {
-    display: none; /* Oculta por defecto */
-}
-/* Solo se muestra en pantallas de escritorio (más de 768px) */
+/* 3. Áreas de Imagen y Formulario */
+#donationModal .modal-image-area { display: none; }
+#donationModal .modal-image-area img { width: 100%; height: 100%; object-fit: cover; }
+#donationModal .modal-form-area { padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; }
+#donationModal .form-header { text-align: center; }
+#donationModal .form-main { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
+#donationModal .form-footer { margin-top: auto; }
+
+/* 4. Vista de Escritorio para el primer modal */
 @media (min-width: 768px) {
-    .modal-image-area {
+    #donationModal .modal-body {
+        grid-template-columns: 1fr 1fr; /* 2 columnas en escritorio */
+    }
+    #donationModal .modal-image-area {
         display: block;
-        height: 100%;
-    }
-    .modal-image-area img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
     }
 }
 
-/* 4. Área del Formulario (Columna Derecha) */
-.modal-form-area {
-    padding: 2rem;
+
+/* --- ESTILOS COMUNES (Barra de Progreso) --- */
+.modal-header.d-block {
+    background-color: var(--bs-modal-bg);
+    z-index: 10;
+    flex-shrink: 0;
+}
+.progress-bar-container {
+    position: relative;
     display: flex;
-    flex-direction: column;
-    /* ESTA ES LA REGLA CLAVE que ahora sí funcionará */
-    justify-content: space-between; 
+    justify-content: space-between;
+    width: 60%;
+    max-width: 250px;
+    margin: 0 auto;
+    font-size: 0.9rem;
 }
-
-/* 5. Estilos específicos para el contenido del formulario */
-.modal-form-area .form-header {
-    text-align: center; /* Centra el título como pediste */
+.progress-step {
+    z-index: 1;
+    background-color: var(--bs-modal-bg);
+    padding: 0 10px;
+    color: var(--bs-gray-500);
 }
-
-.modal-form-area .form-header h5 {
-    font-size: 1.8rem; /* Letra más grande para el título */
-    font-weight: 600;
-    margin-bottom: 0.75rem;
+.progress-step.active {
+    color: var(--bs-danger);
+    font-weight: 700;
 }
-
-/* 6. Responsividad para móvil: El Grid cambia a 1 sola columna */
-@media (max-width: 767.98px) {
-    .modal-dialog.modal-xl .modal-body {
-        grid-template-columns: 1fr; /* Hacemos que solo haya una columna */
-    }
-    .modal-form-area {
-        padding: 1.5rem;
-        /* En móvil, le damos una altura mínima para que no se vea aplastado */
-        min-height: 70vh; 
-    }
+.progress-line {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: var(--bs-gray-300);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
 }
-
 
 
