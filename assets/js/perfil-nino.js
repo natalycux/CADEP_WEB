@@ -3,39 +3,55 @@ document.addEventListener('DOMContentLoaded', function() {
     // Cargar datos del niño desde localStorage
     const childDataJSON = localStorage.getItem('childProfileData');
     if (childDataJSON) {
-        const childData = JSON.parse(childDataJSON);
-        
-        // Actualizar todos los elementos con los datos del niño
-        document.getElementById('profile-child-name').textContent = childData.name;
-        document.getElementById('profile-child-desc').textContent = `Con tu apoyo, ${childData.name} puede tener acceso a educación, alimentación adecuada y oportunidades para un futuro mejor.`;
-        
-        document.getElementById('profile-child-age').textContent = childData.age;
-        document.getElementById('profile-child-birthday').textContent = childData.birthday;
-        document.getElementById('profile-child-waiting').textContent = childData.waitingDays;
-        
-        document.getElementById('about-child-name').textContent = childData.name;
-        document.getElementById('about-child-age').textContent = `${childData.age} años`;
-        document.getElementById('about-child-gender').textContent = childData.gender;
-        document.getElementById('about-child-personality').textContent = childData.personality;
-        document.getElementById('about-child-interests').textContent = childData.interests;
-        document.getElementById('about-child-income').textContent = `$${childData.income}/mes`;
-        document.getElementById('about-child-siblings').textContent = childData.siblings;
-        document.getElementById('about-child-living').textContent = childData.living;
-        document.getElementById('about-child-language').textContent = childData.language;
-        document.getElementById('about-child-studies').textContent = childData.studies;
-        document.getElementById('about-child-code').textContent = childData.code;
-        
-        document.getElementById('home-child-walls').textContent = childData.walls;
-        document.getElementById('home-child-roof').textContent = childData.roof;
-        document.getElementById('home-child-floor').textContent = childData.floor;
-        document.getElementById('home-child-water').textContent = childData.water;
-        document.getElementById('home-child-internet').textContent = childData.internet;
-        document.getElementById('home-child-phone').textContent = childData.phone;
-        
-        document.getElementById('profile-child-image').src = childData.image;
-        
-        // Limpiar localStorage después de usar los datos
-        localStorage.removeItem('childProfileData');
+        try {
+            const childData = JSON.parse(childDataJSON);
+            
+            // Función auxiliar para establecer texto con valor por defecto
+            function setTextContent(elementId, value, defaultValue = 'No especificado') {
+                const element = document.getElementById(elementId);
+                if (element) {
+                    element.textContent = value || defaultValue;
+                }
+            }
+            
+            // Actualizar todos los elementos con los datos del niño
+            setTextContent('profile-child-name', childData.name);
+            setTextContent('profile-child-desc', `Con tu apoyo, ${childData.name} puede tener acceso a educación, alimentación adecuada y oportunidades para un futuro mejor.`);
+            
+            setTextContent('profile-child-age', childData.age);
+            setTextContent('profile-child-birthday', childData.birthday);
+            setTextContent('profile-child-waiting', childData.waitingDays);
+            
+            setTextContent('about-child-name', childData.name);
+            setTextContent('about-child-age', `${childData.age} años`);
+            setTextContent('about-child-gender', childData.gender);
+            setTextContent('about-child-personality', childData.personality);
+            setTextContent('about-child-interests', childData.interests);
+            setTextContent('about-child-income', `$${childData.income}/mes`);
+            setTextContent('about-child-siblings', childData.siblings);
+            setTextContent('about-child-living', childData.living);
+            setTextContent('about-child-language', childData.language);
+            setTextContent('about-child-studies', childData.studies);
+            setTextContent('about-child-code', childData.code);
+            
+            setTextContent('home-child-walls', childData.walls);
+            setTextContent('home-child-roof', childData.roof);
+            setTextContent('home-child-floor', childData.floor);
+            setTextContent('home-child-water', childData.water);
+            setTextContent('home-child-internet', childData.internet);
+            setTextContent('home-child-phone', childData.phone);
+            
+            // Actualizar imagen de perfil
+            const profileImage = document.getElementById('profile-child-image');
+            if (profileImage && childData.image) {
+                profileImage.src = childData.image;
+            }
+            
+            // Limpiar localStorage después de usar los datos
+            localStorage.removeItem('childProfileData');
+        } catch (error) {
+            console.error('Error al parsear los datos del niño:', error);
+        }
     }
     
     // Generar días aleatorios de espera (si no se cargaron datos)

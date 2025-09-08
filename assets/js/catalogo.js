@@ -1,27 +1,43 @@
-// Datos de ejemplo para los niños con campos adicionales
-const childrenData = [
-    { name: "Jose Hernandez", image: "assets/img/Foto10.jpg", gender: "Male", age: 73, birthday: "05/03/1952", language: "Español", waitingDays: 280, country: "Guatemala" },
-    { name: "Juanita de Paz", image: "assets/img/Foto3.jpg", gender: "Female", age: 2, birthday: "12/08/2023", language: "Español", waitingDays: 47, country: "Guatemala" },
-    { name: "Conrado Capulo", image: "assets/img/Foto14.jpg", gender: "Male", age: 67, birthday: "20/06/2019", language: "Español", waitingDays: 61, country: "Guatemala" },
-    { name: "Roberto Chavez", image: "assets/img/Foto15.jpg", gender: "Male", age: 3, birthday: "10/12/2021", language: "Español", waitingDays: 120, country: "Guatemala" },
-    { name: "Hilda Cante",    image: "assets/img/Foto16.jpg", gender: "Female", age: 20, birthday: "01/05/2005", language: "Español", waitingDays: 240, country: "Guatemala" },
-    { name: "Yuri Esperanza", image: "assets/img/Foto12.png", gender: "Female", age: 15, birthday: "05/09/2010", language: "Español", waitingDays: 180, country: "Guatemala" },
-    { name: "Maria Fernanda", image: "assets/img/Foto1.jpg", gender: "Female", age: 7, birthday: "22/02/2018", language: "Español", waitingDays: 300, country: "Guatemala" },
-    { name: "Sebastián José", image: "assets/img/Foto18.jpg", gender: "Male", age: 5, birthday: "18/07/2020", language: "Español", waitingDays: 90, country: "Guatemala" },
-    { name: "Daniela Sophia", image: "assets/img/Foto19.jpg", gender: "Female", age: 9, birthday: "03/11/2016", language: "Español", waitingDays: 150, country: "Guatemala" }
-];
-
-// Variable para almacenar el niño principal actual
-let currentMainChild = {
+// Datos del niño destacado (actualizado para consistencia)
+const featuredChildData = {
     name: "Alexander Juarez",
     image: "assets/img/Foto5.jpg",  
-    gender: "Male",
+    gender: "Masculino",
     age: 15,
-    birthday: "22/11/2018",
+    birthday: "22/11/2009",
     language: "Español",
     waitingDays: 365,
-    country: "Guatemala"
+    country: "Guatemala",
+    personality: "Alegre, curioso",
+    interests: "Fútbol, dibujo",
+    income: "120",
+    siblings: "2 hermanos menores",
+    living: "Madre y abuela",
+    studies: "Sí, tercer grado",
+    code: "NINO-2023-0875",
+    walls: "Block y cemento",
+    roof: "Lamina galvanizada",
+    floor: "Cemento",
+    water: "Tubería comunitaria",
+    internet: "No",
+    phone: "Sí, teléfono comunitario"
 };
+
+// Datos de ejemplo para los niños con campos adicionales
+const childrenData = [
+    { name: "Jose Hernandez", image: "assets/img/Foto10.jpg", gender: "Masculino", age: 73, birthday: "05/03/1952", language: "Español", waitingDays: 280, country: "Guatemala", personality: "Tranquilo, trabajador", interests: "Agricultura, música", income: "150", siblings: "3 hermanos", living: "Esposa e hijos", studies: "No", code: "NINO-2023-1001", walls: "Adobe", roof: "Teja", floor: "Tierra", water: "Pozo", internet: "No", phone: "Sí" },
+    { name: "Juanita de Paz", image: "assets/img/Foto3.jpg", gender: "Femenino", age: 2, birthday: "12/08/2023", language: "Español", waitingDays: 47, country: "Guatemala", personality: "Juguetona, sonriente", interests: "Juegos, canciones", income: "80", siblings: "1 hermano", living: "Padres", studies: "No", code: "NINO-2023-1002", walls: "Madera", roof: "Lámina", floor: "Tierra", water: "Río", internet: "No", phone: "No" },
+    { name: "Conrado Capulo", image: "assets/img/Foto14.jpg", gender: "Masculino", age: 67, birthday: "20/06/1957", language: "Español", waitingDays: 61, country: "Guatemala", personality: "Sabio, paciente", interests: "Lectura, naturaleza", income: "200", siblings: "4 hermanos", living: "Solo", studies: "Primaria completa", code: "NINO-2023-1003", walls: "Block", roof: "Concreto", floor: "Cemento", water: "Tubería", internet: "No", phone: "Sí" },
+    { name: "Roberto Chavez", image: "assets/img/Foto15.jpg", gender: "Masculino", age: 3, birthday: "10/12/2021", language: "Español", waitingDays: 120, country: "Guatemala", personality: "Curioso, activo", interests: "Correr, animales", income: "100", siblings: "2 hermanas", living: "Madre", studies: "No", code: "NINO-2023-1004", walls: "Cartón", roof: "Plástico", floor: "Tierra", water: "Comunitario", internet: "No", phone: "No" },
+    { name: "Hilda Cante", image: "assets/img/Foto16.jpg", gender: "Femenino", age: 20, birthday: "01/05/2005", language: "Español", waitingDays: 240, country: "Guatemala", personality: "Responsable, amable", interests: "Costura, cocina", income: "180", siblings: "Sin hermanos", living: "Padres", studies: "Secundaria", code: "NINO-2023-1005", walls: "Ladrillo", roof: "Lámina", floor: "Cemento", water: "Pila", internet: "No", phone: "Sí" },
+    { name: "Yuri Esperanza", image: "assets/img/Foto12.png", gender: "Femenino", age: 15, birthday: "05/09/2010", language: "Español", waitingDays: 180, country: "Guatemala", personality: "Creativa, estudiosa", interests: "Pintura, lectura", income: "130", siblings: "1 hermano", living: "Abuelos", studies: "Secundaria", code: "NINO-2023-1006", walls: "Adobe", roof: "Teja", floor: "Tierra", water: "Pozo", internet: "No", phone: "Comunitario" },
+    { name: "Maria Fernanda", image: "assets/img/Foto1.jpg", gender: "Femenino", age: 7, birthday: "22/02/2018", language: "Español", waitingDays: 300, country: "Guatemala", personality: "Alegre, sociable", interests: "Muñecas, baile", income: "90", siblings: "3 hermanos", living: "Padres", studies: "Primaria", code: "NINO-2023-1007", walls: "Madera", roof: "Paja", floor: "Tierra", water: "Río", internet: "No", phone: "No" },
+    { name: "Sebastián José", image: "assets/img/Foto18.jpg", gender: "Masculino", age: 5, birthday: "18/07/2020", language: "Español", waitingDays: 90, country: "Guatemala", personality: "Energético, divertido", interests: "Fútbol, colores", income: "110", siblings: "1 hermana", living: "Madre", studies: "Kinder", code: "NINO-2023-1008", walls: "Block", roof: "Lámina", floor: "Cemento", water: "Tubería", internet: "No", phone: "Sí" },
+    { name: "Daniela Sophia", image: "assets/img/Foto19.jpg", gender: "Femenino", age: 9, birthday: "03/11/2016", language: "Español", waitingDays: 150, country: "Guatemala", personality: "Inteligente, amable", interests: "Matemáticas, juegos", income: "140", siblings: "2 hermanos", living: "Padres", studies: "Primaria", code: "NINO-2023-1009", walls: "Ladrillo", roof: "Concreto", floor: "Cemento", water: "Pila", internet: "No", phone: "Sí" }
+];
+
+// Variable para almacenar el niño principal actual (usando featuredChildData como base)
+let currentMainChild = {...featuredChildData};
 
 // Función para crear el HTML de una tarjeta de niño
 function createChildCard(child, index) {
@@ -65,8 +81,8 @@ function updateMainChild(child) {
     document.getElementById('main-child-birthday').textContent = child.birthday;
     document.getElementById('main-child-country').textContent = child.country;
     document.getElementById('main-child-name-desc').textContent = child.name;
-    document.getElementById('main-child-desc').textContent = `Con un ingreso familiar promedio de $597.00 al mes en su comunidad, las familias como la de ${child.name} apenas ganan lo suficiente para cubrir las necesidades básicas.`;
-    
+    document.getElementById('main-child-desc').textContent = `Con un ingreso familiar promedio de $${child.income || '597'}.00 al mes en su comunidad, las familias como la de ${child.name} apenas ganan lo suficiente para cubrir las necesidades básicas.`;
+
     // Añadir animación de destacado
     const mainSection = document.querySelector('.py-5');
     mainSection.classList.add('highlight-animation');
@@ -181,44 +197,20 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error("No se encontró el contenedor de tarjetas.");
     }
 
-    // Redirección a perfil de niño con datos
-  
-    const sponsorBtn = document.getElementById('main-child-sponsor-btn');
-    if (sponsorBtn) {
-        sponsorBtn.addEventListener('click', function() {
-            // Recoger todos los datos del botón
-            const childData = {
-                name: this.getAttribute('data-child-name'),
-                age: this.getAttribute('data-child-age'),
-                birthday: this.getAttribute('data-child-birthday'),
-                country: this.getAttribute('data-child-country'),
-                image: this.getAttribute('data-child-image'),
-                gender: this.getAttribute('data-child-gender'),
-                waitingDays: this.getAttribute('data-child-waiting'),
-                personality: this.getAttribute('data-child-personality'),
-                interests: this.getAttribute('data-child-interests'),
-                income: this.getAttribute('data-child-income'),
-                siblings: this.getAttribute('data-child-siblings'),
-                living: this.getAttribute('data-child-living'),
-                language: this.getAttribute('data-child-language'),
-                studies: this.getAttribute('data-child-studies'),
-                code: this.getAttribute('data-child-code'),
-                walls: this.getAttribute('data-child-walls'),
-                roof: this.getAttribute('data-child-roof'),
-                floor: this.getAttribute('data-child-floor'),
-                water: this.getAttribute('data-child-water'),
-                internet: this.getAttribute('data-child-internet'),
-                phone: this.getAttribute('data-child-phone')
-            };
-            
+    // Redirección a perfil de niño con datos - BOTÓN DESTACADO (CORREGIDO)
+    const featuredSponsorBtn = document.getElementById('featured-sponsor-btn');
+    if (featuredSponsorBtn) {
+        featuredSponsorBtn.addEventListener('click', function() {
             // Guardar en localStorage para usar en la página de perfil
-            localStorage.setItem('childProfileData', JSON.stringify(childData));
+            // Usar currentMainChild en lugar de featuredChildData
+            localStorage.setItem('childProfileData', JSON.stringify(currentMainChild));
             
             // Redirigir a la página de perfil
             window.location.href = 'perfil-nino.html';
         });
     }
 });
+
 
 
 
