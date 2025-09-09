@@ -1,0 +1,124 @@
+---
+title: "Apadrinar"
+description: "Apadrina a un niño y transforma su vida con CADEP."
+layout: "base.html"
+permalink: "/pages/apadrinar.html"
+---
+
+<style>
+    .hero-apadrinar {
+      background: #e6fbff;
+      border-block: 1px solid #cbeff6;
+      padding: 3rem 0;
+    }
+
+    .hero-apadrinar h1 {
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+
+    .note-uses {
+      font-size: .9rem;
+      color: #6c757d;
+      min-height: 40px; 
+    }
+</style>
+
+<div class="pt-5 mt-5">
+    <section class="hero-apadrinar text-center">
+        <div class="container">
+            <h1>Apadrina y transforma vidas</h1>
+            <p class="lead">Con tu apoyo, un niño puede tener acceso a terapias, salud y un futuro lleno de oportunidades.</p>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-5">
+                    <img src="/assets/images/Foto5.jpg" class="img-fluid rounded-3 shadow-sm" alt="Niña candidata a apadrinamiento">
+                </div>
+                <div class="col-lg-7">
+                    <h3 class="mb-2">Te presentamos a Sofía</h3>
+                    <p class="mb-2 text-muted">
+                        Sofía vive con su familia en una comunidad de El Progreso, donde el acceso a servicios de terapia es limitado. Su sonrisa ilumina cada sesión en CADEP.
+                    </p>
+                    <ul class="mb-3">
+                        <li>Edad: 5 años</li>
+                        <li>Fecha de nacimiento: 15/06/2020</li>
+                        <li>País: Guatemala</li>
+                    </ul>
+                    <p class="mb-3">
+                        Tu apadrinamiento mensual de <strong>$39</strong> nos permite brindarle a Sofía y a otros niños las terapias continuas que necesitan para alcanzar su máximo potencial.
+                    </p>
+                    <a href="#widget-apadrinar" class="btn btn-danger btn-lg">APADRINA HOY</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4" id="widget-apadrinar">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="card donate-card shadow-sm">
+                        <div class="card-body">
+                            <div class="donate-switch mb-3 btn-group w-100" role="group">
+                                <input type="radio" class="btn-check" name="donation-type" id="monthly" autocomplete="off">
+                                <label class="btn btn-outline-danger" for="monthly">APADRINAR<br><small>Mensualmente</small></label>
+                                <input type="radio" class="btn-check" name="donation-type" id="onetime" autocomplete="off" checked>
+                                <label class="btn btn-outline-danger" for="onetime">DONAR<br><small>Una Sola Vez</small></label>
+                            </div>
+                            <div class="d-flex gap-2 flex-wrap justify-content-center mb-3">
+                                <button class="btn btn-outline-secondary amount" data-value="20" data-desc="Cubre una sesión de terapia de lenguaje.">$20</button>
+                                <button class="btn btn-primary amount" data-value="39" data-desc="Apadrina las terapias de un niño por un mes.">$39</button>
+                                <button class="btn btn-outline-secondary amount" data-value="50" data-desc="Provee materiales didácticos para un aula.">$50</button>
+                                <button class="btn btn-outline-secondary amount" data-value="100" data-desc="Ayuda a cubrir los costos de una evaluación diagnóstica completa.">$100</button>
+                            </div>
+                            <p id="donation-description" class="note-uses text-center mb-3">Apadrina las terapias de un niño por un mes.</p>
+                            <label class="form-label small">O ingresa otra cantidad</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">$</span>
+                                <input type="number" class="form-control" id="donationValue" placeholder="Valor" min="1" value="39">
+                            </div>
+                            <button class="btn btn-danger w-100 btn-lg" id="cta-button">
+                                <i class="bi bi-heart-fill me-1"></i> APOYAR AHORA
+                            </button>
+                            <p class="text-center text-muted mt-3">Tarjetas aceptadas: Visa, Mastercard, PayPal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const card = document.querySelector('.donate-card');
+        const donationInput = card.querySelector('#donationValue');
+        const descriptionEl = card.querySelector('#donation-description');
+        const ctaButton = card.querySelector('#cta-button');
+        card.querySelectorAll('.amount').forEach(btn => {
+            btn.addEventListener('click', () => {
+                card.querySelectorAll('.amount.btn-primary').forEach(activeBtn => activeBtn.classList.replace('btn-primary', 'btn-outline-secondary'));
+                btn.classList.replace('btn-outline-secondary', 'btn-primary');
+                donationInput.value = btn.dataset.value;
+                descriptionEl.textContent = btn.dataset.desc;
+            });
+        });
+        donationInput.addEventListener('input', () => {
+            card.querySelectorAll('.amount.btn-primary').forEach(activeBtn => activeBtn.classList.replace('btn-primary', 'btn-outline-secondary'));
+            descriptionEl.textContent = 'Tu donación apoya directamente nuestras terapias.';
+        });
+        ctaButton.addEventListener('click', () => {
+            const isMonthly = card.querySelector('#monthly:checked') !== null;
+            const value = Number(donationInput.value || 0);
+            if (!value || value <= 0) {
+                donationInput.focus();
+                return alert('Por favor, ingresa un monto válido 🙂');
+            }
+            alert(`Procesando ${isMonthly ? 'apadrinamiento mensual' : 'donación única'} de $${value}… ¡Muchas gracias!`);
+        });
+    });
+</script>
