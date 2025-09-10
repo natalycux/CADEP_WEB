@@ -1,21 +1,28 @@
+// Importamos el plugin que acabamos de instalar
+const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+
 module.exports = function(eleventyConfig) {
-  // Copiar assets, styles y scripts a la carpeta final (_site)
+  // Añadimos el plugin a Eleventy
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+  
+  // El resto de tu configuración...
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/styles");
   eleventyConfig.addPassthroughCopy("src/scripts");
+
+  eleventyConfig.addFilter("toJSON", function(value) {
+    return JSON.stringify(value);
+  });
 
   return {
     dir: {
       input: "src",
       output: "_site",
       layouts: "layouts",
-      includes: "components"
-      // Los includes son relativos a la carpeta de input (src)
-      // No necesitamos configurar 'includes' si están en la raíz de 'src'
-      // pero si los pones en src/_includes, Eleventy los encuentra por defecto.
-      // Para nuestra estructura (src/components), la ruta en el include `{% include "components/header.html" %}` funciona.
+      includes: "components",
+      data: "_data" // Buena práctica definir también la carpeta de datos
     },
-    htmlTemplateEngine: "njk", // Usamos Nunjucks para los includes y layouts
+    htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk"
   };
 };
