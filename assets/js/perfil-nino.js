@@ -49,6 +49,13 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Limpiar localStorage después de usar los datos
             localStorage.removeItem('childProfileData');
+            
+            // Si i18n está disponible, aplicar traducciones después de cargar los datos
+            if (typeof i18n !== 'undefined') {
+                setTimeout(() => {
+                    i18n.applyTranslations(i18n.currentLang);
+                }, 100);
+            }
         } catch (error) {
             console.error('Error al parsear los datos del niño:', error);
         }
