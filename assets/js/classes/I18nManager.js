@@ -1,7 +1,13 @@
-// Sistema de internacionalización para CADEP
-const i18n = {
-    currentLang: 'es',
-    translations: {
+/**
+ * @file I18nManager.js
+ * @class I18nManager
+ * @description Gestiona la internacionalización (i18n) del sitio, permitiendo cambiar entre idiomas y aplicando las traducciones correspondientes.
+ */
+export default class I18nManager {
+    /**
+     * @description Contiene todas las traducciones para los idiomas soportados.
+     */
+    translations = {
         es: {
             // ... (mantén todas las traducciones existentes en español) ...
             
@@ -153,36 +159,54 @@ const i18n = {
             'profile_how_sponsor_title': 'What do you receive as a sponsor?',
             'profile_how_sponsor_desc': 'As a sponsor, you will receive periodic updates on the child\'s progress, thank you letters, the opportunity to communicate with him/her, and detailed reports on the impact of your donation on their community.'
         }
-    },
+    };
 
-    // Inicializar el sistema de internacionalización
-    init: function() {
+    /**
+     * @constructor
+     */
+    constructor() {
         this.currentLang = this.getSavedLang() || 'es';
+    }
+
+    /**
+     * Inicializa el sistema de i18n.
+     * @returns {void}
+     */
+    init() {
         this.applyTranslations(this.currentLang);
         this.updateLanguageSelector();
         this.setHtmlLangAttribute();
         
-        // Si no hay idioma guardado y estamos en index.html, mostrar modal
         if (!this.getSavedLang() && this.isIndexPage()) {
             setTimeout(() => {
                 this.showLanguageModal();
             }, 1000);
         }
-    },
+    }
 
-    // Verificar si estamos en la página index
-    isIndexPage: function() {
+    /**
+     * Verifica si la página actual es la página de inicio.
+     * @returns {boolean} - True si es la página de inicio.
+     */
+    isIndexPage() {
         return window.location.pathname.endsWith('index.html') || 
                window.location.pathname.endsWith('/');
-    },
+    }
 
-    // Obtener idioma guardado
-    getSavedLang: function() {
+    /**
+     * Obtiene el idioma guardado en localStorage.
+     * @returns {string|null} - El código del idioma o null.
+     */
+    getSavedLang() {
         return localStorage.getItem('site_lang');
-    },
+    }
 
-    // Establecer idioma
-    setLang: function(lang) {
+    /**
+     * Establece y guarda el idioma seleccionado.
+     * @param {string} lang - El código del idioma (ej. 'es', 'en').
+     * @returns {void}
+     */
+    setLang(lang) {
         if (this.translations[lang]) {
             localStorage.setItem('site_lang', lang);
             this.currentLang = lang;
@@ -191,11 +215,14 @@ const i18n = {
             this.setHtmlLangAttribute();
             this.hideLanguageModal();
         }
-    },
+    }
 
-    // Aplicar traducciones a la página (FUNCIÓN MODIFICADA)
-    applyTranslations: function(lang) {
-        // Guardar datos específicos antes de traducir
+    /**
+     * Aplica las traducciones al DOM.
+     * @param {string} lang - El código del idioma a aplicar.
+     * @returns {void}
+     */
+    applyTranslations(lang) {
         const childSpecificData = {};
         const childDataSelectors = [
             '#profile-child-name', '#about-child-name', 
@@ -218,19 +245,16 @@ const i18n = {
             }
         });
 
-        // Traducir elementos con data-i18n
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
             if (this.translations[lang][key]) {
                 let translation = this.translations[lang][key];
                 
-                // Manejar textos con variables (como el nombre del niño)
                 if (key === 'profile_child_desc' && document.getElementById('profile-child-name')) {
                     const childName = document.getElementById('profile-child-name').textContent;
                     translation = translation.replace('{name}', childName);
                 }
                 
-                // Para elementos de formulario, usar value en lugar de innerHTML
                 if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA' || element.tagName === 'SELECT') {
                     element.value = translation;
                 } else {
@@ -239,7 +263,6 @@ const i18n = {
             }
         });
 
-        // Restaurar datos específicos después de la traducción
         Object.keys(childSpecificData).forEach(selector => {
             const element = document.querySelector(selector);
             if (element) {
@@ -247,7 +270,6 @@ const i18n = {
             }
         });
 
-        // Traducir atributos con data-i18n-attr
         document.querySelectorAll('[data-i18n-attr]').forEach(element => {
             const attrConfig = element.getAttribute('data-i18n-attr');
             const attrPairs = attrConfig.split(';');
@@ -260,97 +282,97 @@ const i18n = {
             });
         });
 
-        // Actualizar título de la página
         const pageTitle = document.querySelector('title');
         if (pageTitle && this.translations[lang]['site_title']) {
             pageTitle.textContent = this.translations[lang]['site_title'];
         }
 
-        // Actualizar meta description
         const metaDescription = document.querySelector('meta[name="description"]');
         if (metaDescription && this.translations[lang]['site_description']) {
             metaDescription.setAttribute('content', this.translations[lang]['site_description']);
         }
-    },
+    }
 
-    // Mostrar modal de selección de idioma
-    showLanguageModal: function() {
-        // Solo crear el modal si no existe
+    /**
+     * Muestra el modal de selección de idioma.
+     * @returns {void}
+     */
+    showLanguageModal() {
         if (document.getElementById('languageModal')) {
             return;
         }
         
-        const modalHTML = `
-            <div class="modal fade" id="languageModal" tabindex="-1" aria-labelledby="languageModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="languageModalLabel" data-i18n="language_modal_title">¿Quieres continuar en Ingles o español?</h5>
+        const modalHTML = "" +
+            "<div class=\"modal fade\" id=\"languageModal\" tabindex=\"-1\" aria-labelledby=\"languageModalLabel\" aria-hidden=\"true\" data-bs-backdrop=\"static\" data-bs-keyboard=\"false\">" +
+                "<div class=\"modal-dialog modal-dialog-centered\">
+                    <div class=\"modal-content\">
+                        <div class=\"modal-header\">
+                            <h5 class=\"modal-title\" id=\"languageModalLabel\" data-i18n=\"language_modal_title\">¿Quieres continuar en Ingles o español?</h5>
                         </div>
-                        <div class="modal-body text-center">
-                            <p data-i18n="language_modal_title">¿Quieres continuar en Ingles o español?</p>
-                            <div class="d-flex justify-content-center gap-3 mt-4">
-                                <button type="button" class="btn btn-primary" id="btn-lang-en" data-i18n="language_btn_english">Ingles</button>
-                                <button type="button" class="btn btn-secondary" id="btn-lang-es" data-i18n="language_btn_spanish">español</button>
+                        <div class=\"modal-body text-center\">
+                            <p data-i18n=\"language_modal_title\">¿Quieres continuar en Ingles o español?</p>
+                            <div class=\"d-flex justify-content-center gap-3 mt-4\">
+                                <button type=\"button\" class=\"btn btn-primary\" id=\"btn-lang-en\" data-i18n=\"language_btn_english\">Ingles</button>
+                                <button type=\"button\" class=\"btn btn-secondary\" id=\"btn-lang-es\" data-i18n=\"language_btn_spanish\">español</button>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        `;
+                </div>" +
+            "</div>";
         
         document.body.insertAdjacentHTML('beforeend', modalHTML);
         
-        // Aplicar traducciones al modal recién creado
         this.applyTranslations(this.currentLang);
         
-        // Añadir event listeners a los botones
         document.getElementById('btn-lang-en')?.addEventListener('click', () => this.setLang('en'));
         document.getElementById('btn-lang-es')?.addEventListener('click', () => this.setLang('es'));
         
-        // Inicializar el modal de Bootstrap
         const languageModal = new bootstrap.Modal(document.getElementById('languageModal'));
         languageModal.show();
         
-        // Asegurarse de que el modal se cierre correctamente
         document.getElementById('languageModal').addEventListener('hidden.bs.modal', () => {
             this.hideLanguageModal();
         });
-    },
+    }
 
-    // Ocultar modal de selección de idioma
-    hideLanguageModal: function() {
+    /**
+     * Oculta y elimina el modal de selección de idioma del DOM.
+     * @returns {void}
+     */
+    hideLanguageModal() {
         const modalElement = document.getElementById('languageModal');
         if (modalElement) {
             modalElement.remove();
         }
-    },
+    }
 
-    // Actualizar selector de idioma
-    updateLanguageSelector: function() {
+    /**
+     * Actualiza el valor del selector de idioma en la UI.
+     * @returns {void}
+     */
+    updateLanguageSelector() {
         const selector = document.getElementById('languageSelector');
         if (selector) {
             selector.value = this.currentLang;
         }
-    },
+    }
 
-    // Establecer atributo lang en el elemento html
-    setHtmlLangAttribute: function() {
+    /**
+     * Establece el atributo 'lang' en la etiqueta <html>.
+     * @returns {void}
+     */
+    setHtmlLangAttribute() {
         document.documentElement.setAttribute('lang', this.currentLang);
-    },
+    }
 
-    // Cambiar idioma desde el selector
-    changeLanguage: function() {
+    /**
+     * Cambia el idioma basado en la selección del usuario en el dropdown.
+     * @returns {void}
+     */
+    changeLanguage() {
         const selector = document.getElementById('languageSelector');
         if (selector) {
             this.setLang(selector.value);
         }
     }
-};
-
-// Inicializar cuando el DOM esté listo
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => i18n.init());
-} else {
-    i18n.init();
 }

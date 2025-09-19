@@ -1,3 +1,10 @@
+<!--
+    DOCUMENTACIÓN:
+    Este archivo muestra el catálogo de niños para apadrinar.
+    - La sección superior muestra un "niño destacado" cuyos datos son actualizados por JS.
+    - La sección principal `<div id="children-cards-container">` es llenada dinámicamente por la clase `ChildCatalog` en main.js.
+    - Las interacciones (clic en tarjeta, apadrinar, etc.) son controladas por `ChildCatalog`.
+-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,34 +24,40 @@
 </head>
 <body>
 
-    <!-- Aquí se cargará el contenido de tu header -->
+    <!-- =================================================================== -->
+    <!-- HEADER (inyectado por JavaScript) -->
+    <!-- =================================================================== -->
     <div id="site-header"></div>
 
     <main class="main-content">
-        <!-- Contenedor principal que centra todo el contenido de la página -->
         <div class="container">
-            <!-- Sección del niño destacado con fondo rosado más ancho -->
-    <section class="py-5">
-        <div class="row align-items-center">
-             <div class="col-md-6 col-lg-5 text-center text-md-start mb-4 mb-md-0">
-                <!-- En esta parte es donde se debe poner la foto del niño destacado -->
-                    <img src="assets/img/Foto5.jpg" id="main-child-img" class="img-fluid featured-child-img" alt="Alexander Juarez">
+            <!-- =================================================================== -->
+            <!-- SECCIÓN NIÑO DESTACADO -->
+            <!-- Los datos de este niño se actualizan dinámicamente por `ChildCatalog`. -->
+            <!-- =================================================================== -->
+            <section class="py-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6 col-lg-5 text-center text-md-start mb-4 mb-md-0">
+                        <img src="assets/img/Foto5.jpg" id="main-child-img" class="img-fluid featured-child-img" alt="Alexander Juarez">
+                    </div>
+                    <div class="col-md-6 col-lg-7">
+                        <h1 class="display-4 fw-bold mb-3" data-i18n="sponsor_title">Te presentamos a <span id="main-child-name">Alexander Juarez</span></h1>
+                        <p class="lead" id="main-child-desc" data-i18n="sponsor_description">Con un ingreso familiar promedio de $597.00 al mes en su comunidad, las familias como la de <span id="main-child-name-desc">Alexander</span> apenas ganan lo suficiente para cubrir las necesidades básicas.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-star-fill text-warning me-2"></i><strong data-i18n="sponsor_age">Edad:</strong> <span id="main-child-age">15</span></li>
+                            <li><i class="bi bi-star-fill text-warning me-2"></i><strong data-i18n="sponsor_birthday">Fecha de cumpleaños:</strong> <span id="main-child-birthday">22/11/2009</span></li>
+                            <li><i class="bi bi-star-fill text-warning me-2"></i><strong data-i18n="sponsor_country">País:</strong> <span id="main-child-country">Guatemala</span></li>
+                        </ul>
+                        <p data-i18n="sponsor_impact">Solamente se requiere una persona para generar un cambio positivo y duradero en la vida de <span id="main-child-name2">Alexander</span>. Tu donación mensual de $39 es invertida en la vida de algunos de los niños más vulnerables del mundo.</p>
+                        <button id="featured-sponsor-btn" class="btn btn-danger btn-lg mt-3 rounded-pill px-4" data-i18n="sponsor_button">APADRINAR</button>
+                    </div>
                 </div>
-             <div class="col-md-6 col-lg-7">
-            <h1 class="display-4 fw-bold mb-3" data-i18n="sponsor_title">Te presentamos a <span id="main-child-name">Alexander Juarez</span></h1>
-            <p class="lead" id="main-child-desc" data-i18n="sponsor_description">Con un ingreso familiar promedio de $597.00 al mes en su comunidad, las familias como la de <span id="main-child-name-desc">Alexander</span> apenas ganan lo suficiente para cubrir las necesidades básicas.</p>
-            <ul class="list-unstyled">
-                <li><i class="bi bi-star-fill text-warning me-2"></i><strong data-i18n="sponsor_age">Edad:</strong> <span id="main-child-age">15</span></li>
-                <li><i class="bi bi-star-fill text-warning me-2"></i><strong data-i18n="sponsor_birthday">Fecha de cumpleaños:</strong> <span id="main-child-birthday">22/11/2009</span></li>
-                <li><i class="bi bi-star-fill text-warning me-2"></i><strong data-i18n="sponsor_country">País:</strong> <span id="main-child-country">Guatemala</span></li>
-            </ul>
-            <p data-i18n="sponsor_impact">Solamente se requiere una persona para generar un cambio positivo y duradero en la vida de <span id="main-child-name2">Alexander</span>. Tu donación mensual de $39 es invertida en la vida de algunos de los niños más vulnerables del mundo.</p>
-            <button id="featured-sponsor-btn" class="btn btn-danger btn-lg mt-3 rounded-pill px-4" data-i18n="sponsor_button">APADRINAR</button>
-        </div>
-    </div>
-</section>
+            </section>
 
-            <!-- Sección de búsqueda y tarjetas de niños -->
+            <!-- =================================================================== -->
+            <!-- SECCIÓN CATÁLOGO DE NIÑOS -->
+            <!-- Este contenedor es el objetivo de `ChildCatalog` para inyectar las tarjetas. -->
+            <!-- =================================================================== -->
             <section class="py-5">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2 class="h4 mb-0" data-i18n="sponsor_find_title">Encuentra un niño que necesita ser apoyado!</h2>
@@ -67,10 +80,11 @@
             </section>
         </div>
         
-        <!-- Esta sección se mantiene con su propio estilo para tener un fondo de color a todo el ancho -->
+        <!-- =================================================================== -->
+        <!-- SECCIÓN INFORMATIVA -->
+        <!-- =================================================================== -->
         <div class="pink-bg-wrapper">
             <div class="container">
-                <!-- Sección de "Qué es el apadrinamiento" -->
                 <section class="apadrinamiento-section">
                     <div class="row align-items-center">
                         <div class="col-md-6 mb-4 mb-md-0">
@@ -90,42 +104,19 @@
         </div>
     </main>
 
-    <!-- Aquí se cargará el contenido de tu footer -->
+    <!-- =================================================================== -->
+    <!-- FOOTER (inyectado por JavaScript) -->
+    <!-- =================================================================== -->
     <div id="site-footer"></div>
-    
-    <!-- Incluye los scripts de Bootstrap y el script personalizado -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/i18n.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/header.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/catalogo.js"></script>
 
+    <!-- Contenedores para los modales (inyectados por JavaScript) -->
+    <div id="donation-modal-container"></div>
+    <div id="payment-modal-container"></div>
     
-    <script>
-        // Verificar que i18n se ha cargado y inicializado
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof i18n !== 'undefined') {
-                i18n.init();
-            } else {
-                console.error('i18n no está definido. Revisa la carga de scripts.');
-                // Reintentar después de un breve delay
-                setTimeout(function() {
-                    if (typeof i18n !== 'undefined') {
-                        i18n.init();
-                    }
-                }, 500);
-            }
-        });   
-    </script>
+    <!-- =================================================================== -->
+    <!-- SCRIPTS -->
+    <!-- =================================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-

@@ -1,40 +1,56 @@
+<!--
+    DOCUMENTACIÓN:
+    Este archivo muestra el perfil detallado de un niño específico.
+    - La clase `ChildProfilePage` en main.js se encarga de toda la lógica de esta página.
+    - Al cargar, el script busca datos en `localStorage` (guardados desde la página del catálogo).
+    - Si encuentra los datos, los usa para llenar dinámicamente todos los campos del perfil (nombre, edad, intereses, etc.).
+    - Si no hay datos, la página mostrará la información por defecto del HTML.
+-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="profile_page_title">Perfil de Niño - Apadrinamiento</title>
-        <!-- Incluye los CSS de Bootstrap y Bootstrap Icons -->
+    <!-- Incluye los CSS de Bootstrap y Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-        <!-- Vincula el archivo de estilos CSS externo -->
+    <!-- Vincula el archivo de estilos CSS externo -->
     <link rel="stylesheet" href="assets/css/perfil-nino.css">
-     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/catalogo.css">
-    <link rel="stylesheet" href="assets/css/pagina.css"> <!-- Archivo CSS para los estilos específicos de esta página -->
+    <link rel="stylesheet" href="assets/css/pagina.css">
 
 </head>
 <body>
-    <!-- Header -->
+    <!-- =================================================================== -->
+    <!-- HEADER (inyectado por JavaScript) -->
+    <!-- =================================================================== -->
     <div id="site-header"></div>
     
-<!-- Portada con fondo celeste más grande -->
-<section class="cover-section">
-    <div class="container position-relative h-100">
-        <!-- Foto de perfil circular superpuesta sobre la portada -->
-        <div class="profile-image-container">
-            <!-- Reemplazar con imagen real del niño -->
-            <img src="assets/img/Foto2.jpg" class="profile-image" id="profile-child-image" alt="Foto de perfil del niño">
+    <!-- =================================================================== -->
+    <!-- SECCIÓN PORTADA Y FOTO DE PERFIL -->
+    <!-- La imagen de perfil se actualiza dinámicamente por `ChildProfilePage`. -->
+    <!-- =================================================================== -->
+    <section class="cover-section">
+        <div class="container position-relative h-100">
+            <div class="profile-image-container">
+                <img src="assets/img/Foto2.jpg" class="profile-image" id="profile-child-image" alt="Foto de perfil del niño">
+            </div>
         </div>
-    </div>
-</section>
+    </section>
     
     <div class="container main-content">
-         <!-- Información principal del perfil -->
         <div class="row">
+            <!-- Columna principal con la información del niño -->
             <div class="col-md-8">
+
+                <!-- =================================================================== -->
+                <!-- SECCIÓN INFO PRINCIPAL -->
+                <!-- Todos los `span` con ID son llenados por `ChildProfilePage`. -->
+                <!-- =================================================================== -->
                 <div class="profile-info">
                     <div class="d-flex justify-content-between align-items-start mb-4">
                         <div>
@@ -65,13 +81,13 @@
                     </div>
                     
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <!-- BOTÓN CON ENLACE A OTRA PÁGINA -->
-                        <!-- Cambia la URL por la dirección de tu página de catálogo de niños -->
                         <a href="Pagina.html" class="btn btn-outline-primary" data-i18n="profile_find_more">Buscar más Niños <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
                 
-                <!-- Sección ACERCA DE MI Y MI FAMILIA -->
+                <!-- =================================================================== -->
+                <!-- SECCIÓN ACERCA DE MI Y MI FAMILIA -->
+                <!-- =================================================================== -->
                 <div class="about-section mt-4">
                     <h3 class="section-title" data-i18n="profile_about_title">ACERCA DE MI Y MI FAMILIA</h3>
                     <div class="row">
@@ -93,7 +109,9 @@
                     </div>
                 </div>
                 
-                <!-- Sección ACERCA DE MI HOGAR -->
+                <!-- =================================================================== -->
+                <!-- SECCIÓN ACERCA DE MI HOGAR -->
+                <!-- =================================================================== -->
                 <div class="about-section mt-4">
                     <h3 class="section-title" data-i18n="profile_home_title">ACERCA DE MI HOGAR</h3>
                     <div class="row">
@@ -110,13 +128,11 @@
                     </div>
                 </div>
                 
-                <!-- Sección sobre la pobreza en Guatemala -->
+                <!-- Sección de contexto de pobreza -->
                 <div class="about-section mt-4">
                     <h3 class="section-title" data-i18n="profile_context_title">CONTEXTO: POBREZA EN GUATEMALA</h3>
-                    <p data-i18n="profile_context_desc1">En Guatemala, el 59.3% de la población vive en situación de pobreza. En áreas rurales como la comunidad de Carlos, este porcentaje aumenta al 75%. Las familias con niños pequeños son las más afectadas, với limitado acceso a educación, salud y nutrición adecuada.</p>
+                    <p data-i18n="profile_context_desc1">En Guatemala, el 59.3% de la población vive en situación de pobreza. En áreas rurales como la comunidad de Carlos, este porcentaje aumenta al 75%. Las familias con niños pequeños son las más afectadas, con limitado acceso a educación, salud y nutrición adecuada.</p>
                     <p data-i18n="profile_context_desc2">La pobreza afecta especialmente a niños con discapacidades o problemas de salud, quienes enfrentan barreras adicionales para su desarrollo integral.</p>
-                    
-                    <!-- Espacio para imagen sobre pobreza en Guatemala -->
                     <div class="text-center my-4">
                         <img src="assets/img/Foto23.png" class="img-fluid rounded" alt="Imagen sobre pobreza en Guatemala">
                         <p class="text-muted mt-2" data-i18n="profile_context_img_desc">Imagen que muestra las condiciones de vida en comunidades vulnerables de Guatemala</p>
@@ -124,8 +140,11 @@
                 </div>
             </div>
             
+            <!-- Columna lateral con información de impacto -->
             <div class="col-md-4">
-                <!-- Sección de impacto de donaciones -->
+                <!-- =================================================================== -->
+                <!-- SECCIÓN IMPACTO DEL APOYO -->
+                <!-- =================================================================== -->
                 <div class="about-section">
                     <h3 class="section-title" data-i18n="profile_impact_title">IMPACTO DE TU APOYO</h3>
                     <p data-i18n="profile_impact_intro">Tu donación mensual de $39 proveerá a Carlos:</p>
@@ -137,19 +156,18 @@
                         <li data-i18n="profile_impact_list5">Apoyo psicosocial y actividades recreativas</li>
                     </ul>
                     <p data-i18n="profile_impact_desc">Con tu apoyo, Carlos podrá romper el ciclo de pobreza y construir un futuro lleno de oportunidades.</p>
-                    
-                    <!-- Espacio para imagen de niño beneficiado -->
                     <div class="text-center my-4">
                         <img src="assets/img/Foto4.jpg" class="img-fluid rounded" alt="Niño beneficiado por apadrinamiento">
                         <p class="text-muted mt-2" data-i18n="profile_impact_img_desc">Imagen de un niño participando en programas de apadrinamiento</p>
                     </div>
-                    
                     <div class="text-center">
                         <button class="btn btn-donate btn-lg w-100" data-i18n="profile_sponsor_button">APADRINAR HOY</button>
                     </div>
                 </div>
                 
-                <!-- Sección de uso de donativos -->
+                <!-- =================================================================== -->
+                <!-- SECCIÓN USO DE DONATIVOS -->
+                <!-- =================================================================== -->
                 <div class="about-section mt-4">
                     <h3 class="section-title" data-i18n="profile_usage_title">¿CÓMO SE UTILIZAN TUS DONATIVOS?</h3>
                     <div class="progress mb-2">
@@ -169,77 +187,53 @@
         </div>
     </div>
     
-    <!-- Sección Cómo funciona el apadrinamiento -->
+    <!-- =================================================================== -->
+    <!-- SECCIÓN CÓMO FUNCIONA -->
+    <!-- =================================================================== -->
     <section class="how-it-works mt-5">
         <div class="container">
             <h2 class="text-center mb-5" data-i18n="profile_how_title">Así es como funciona el apadrinamiento</h2>
-            
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="bi bi-heart-fill"></i>
-                        </div>
+                        <div class="benefit-icon"><i class="bi bi-heart-fill"></i></div>
                         <h4 data-i18n="profile_how_what_title">¿Qué recibe el niño?</h4>
                         <p data-i18n="profile_how_what_desc">El niño recibe apoyo integral que incluye educación, alimentación balanceada, atención médica regular, y participación en programas de desarrollo comunitario que le brindan las herramientas necesarias para superarse.</p>
-                        
-                        <!-- Espacio para imagen de niños beneficiados -->
                         <div class="text-center my-3">
                             <img src="assets/img/Foto8.jpg" class="img-fluid rounded" alt="Niños participando en programas de apadrinamiento">
                         </div>
                     </div>
                 </div>
-                
                 <div class="col-md-6 mb-4">
                     <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="bi bi-people-fill"></i>
-                        </div>
+                        <div class="benefit-icon"><i class="bi bi-people-fill"></i></div>
                         <h4 data-i18n="profile_how_sponsor_title">¿Qué recibe como padrino/madrina?</h4>
                         <p data-i18n="profile_how_sponsor_desc">Como padrino, recibirás actualizaciones periódicas sobre el progreso del niño, cartas de agradecimiento, la oportunidad de comunicarte con él/ella, y reportes detallados del impacto de tu donación en su comunidad.</p>
-                        
-                        <!-- Espacio para imagen de interacción padrino-niño -->
                         <div class="text-center my-3">
                             <img src="assets/img/Foto7.jpg" class="img-fluid rounded" alt="Interacción entre padrino y niño">
                         </div>
                     </div>
                 </div>
             </div>
-            
             <div class="text-center mt-4">
                 <button class="btn btn-donate btn-lg" data-i18n="profile_sponsor_button">APADRINAR HOY</button>
             </div>
         </div>
     </section>
     
-    <!-- Footer -->
+    <!-- =================================================================== -->
+    <!-- FOOTER (inyectado por JavaScript) -->
+    <!-- =================================================================== -->
     <div id="site-footer"></div>
+
+    <!-- Contenedores para los modales (inyectados por JavaScript) -->
+    <div id="donation-modal-container"></div>
+    <div id="payment-modal-container"></div>
     
-    <!-- Scripts de Bootstrap y JavaScript personalizado -->
+    <!-- =================================================================== -->
+    <!-- SCRIPTS -->
+    <!-- =================================================================== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/i18n.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/header.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/catalogo.js"></script>
-    <script src="assets/js/perfil-nino.js"></script>
-    
-    
-    <script>
-        // Verificar que i18n se ha cargado y inicializado
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof i18n !== 'undefined') {
-                i18n.init();
-            } else {
-                console.error('i18n no está definido. Revisa la carga de scripts.');
-                // Reintentar después de un breve delay
-                setTimeout(function() {
-                    if (typeof i18n !== 'undefined') {
-                        i18n.init();
-                    }
-                }, 500);
-            }
-        });
-    </script>
 </body>
 </html>
