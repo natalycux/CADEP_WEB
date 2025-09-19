@@ -301,35 +301,35 @@ export default class I18nManager {
         if (document.getElementById('languageModal')) {
             return;
         }
-        
-        const modalHTML = "" +
-            "<div class=\"modal fade\" id=\"languageModal\" tabindex=\"-1\" aria-labelledby=\"languageModalLabel\" aria-hidden=\"true\" data-bs-backdrop=\"static\" data-bs-keyboard=\"false\">" +
-                "<div class=\"modal-dialog modal-dialog-centered\">
-                    <div class=\"modal-content\">
-                        <div class=\"modal-header\">
-                            <h5 class=\"modal-title\" id=\"languageModalLabel\" data-i18n=\"language_modal_title\">¿Quieres continuar en Ingles o español?</h5>
+
+        const modalHTML = `
+            <div class="modal fade" id="languageModal" tabindex="-1" aria-labelledby="languageModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="languageModalLabel" data-i18n="language_modal_title">¿Quieres continuar en Ingles o español?</h5>
                         </div>
-                        <div class=\"modal-body text-center\">
-                            <p data-i18n=\"language_modal_title\">¿Quieres continuar en Ingles o español?</p>
-                            <div class=\"d-flex justify-content-center gap-3 mt-4\">
-                                <button type=\"button\" class=\"btn btn-primary\" id=\"btn-lang-en\" data-i18n=\"language_btn_english\">Ingles</button>
-                                <button type=\"button\" class=\"btn btn-secondary\" id=\"btn-lang-es\" data-i18n=\"language_btn_spanish\">español</button>
+                        <div class="modal-body text-center">
+                            <p data-i18n="language_modal_title">¿Quieres continuar en Ingles o español?</p>
+                            <div class="d-flex justify-content-center gap-3 mt-4">
+                                <button type="button" class="btn btn-primary" id="btn-lang-en" data-i18n="language_btn_english">Ingles</button>
+                                <button type="button" class="btn btn-secondary" id="btn-lang-es" data-i18n="language_btn_spanish">español</button>
                             </div>
                         </div>
                     </div>
-                </div>" +
-            "</div>";
-        
+                </div>
+            </div>`;
+
         document.body.insertAdjacentHTML('beforeend', modalHTML);
-        
+
         this.applyTranslations(this.currentLang);
-        
+
         document.getElementById('btn-lang-en')?.addEventListener('click', () => this.setLang('en'));
         document.getElementById('btn-lang-es')?.addEventListener('click', () => this.setLang('es'));
-        
+
         const languageModal = new bootstrap.Modal(document.getElementById('languageModal'));
         languageModal.show();
-        
+
         document.getElementById('languageModal').addEventListener('hidden.bs.modal', () => {
             this.hideLanguageModal();
         });
