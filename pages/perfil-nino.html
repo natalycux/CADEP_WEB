@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Niño - Apadrinamiento</title>
+        <!-- Incluye los CSS de Bootstrap y Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+        <!-- Vincula el archivo de estilos CSS externo -->
+    <link rel="stylesheet" href="assets/css/perfil-nino.css">
+     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/catalogo.css">
+    <link rel="stylesheet" href="assets/css/pagina.css"> <!-- Archivo CSS para los estilos específicos de esta página -->
+
+</head>
+<body>
+    <!-- Header -->
+    <div id="site-header"></div>
+    
+<!-- Portada con fondo celeste más grande -->
+<section class="cover-section">
+    <div class="container position-relative h-100">
+        <!-- Foto de perfil circular superpuesta sobre la portada -->
+        <div class="profile-image-container">
+            <!-- Reemplazar con imagen real del niño -->
+            <img src="assets/img/Foto1.jpg" class="profile-image" id="profile-child-image" alt="Foto de perfil del niño">
+        </div>
+    </div>
+</section>
+    
+    <div class="container main-content">
+         <!-- Información principal del perfil -->
+        <div class="row">
+            <div class="col-md-8">
+                <div class="profile-info">
+                    <div class="d-flex justify-content-between align-items-start mb-4">
+                        <div>
+                            <h1 class="fw-bold" id="profile-child-name">Carlos Rodríguez</h1>
+                            <p class="lead" id="profile-child-desc">Con tu apoyo, Carlos puede tener acceso a educación,
+                                 alimentación adecuada y oportunidades para un futuro mejor.</p>
+                        </div>
+                        <div class="d-flex">
+                            <button class="btn btn-donate me-2">APADRINAR AHORA</button>
+                            <button class="btn btn-outline-secondary rounded-circle">
+                                <i class="bi bi-share"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="row text-center mb-4">
+                        <div class="col-4 stat-item">
+                            <div class="stat-number" id="profile-child-age">9</div>
+                            <div class="stat-label">Años</div>
+                        </div>
+                        <div class="col-4 stat-item">
+                            <div class="stat-number" id="profile-child-birthday">15/04/2015</div>
+                            <div class="stat-label">Fecha de Nacimiento</div>
+                        </div>
+                        <div class="col-4 stat-item">
+                            <div class="stat-number" id="profile-child-waiting">128</div>
+                            <div class="stat-label">Días de espera</div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <!-- BOTÓN CON ENLACE A OTRA PÁGINA -->
+                        <!-- Cambia la URL por la dirección de tu página de catálogo de niños -->
+                        <a href="Pagina.html" class="btn btn-outline-primary">Buscar más Niños <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Sección ACERCA DE MI Y MI FAMILIA -->
+                <div class="about-section mt-4">
+                    <h3 class="section-title">ACERCA DE MI Y MI FAMILIA</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Nombre:</strong> <span id="about-child-name">Carlos Rodríguez</span></p>
+                            <p><strong>Edad:</strong> <span id="about-child-age">9 años</span></p>
+                            <p><strong>Género:</strong> <span id="about-child-gender">Masculino</span></p>
+                            <p><strong>Personalidad:</strong> <span id="about-child-personality">Alegre, curioso y juguetón</span></p>
+                            <p><strong>Intereses:</strong> <span id="about-child-interests">Fútbol, dibujo y animales</span></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Ingreso familiar:</strong> <span id="about-child-income">$120/mes</span></p>
+                            <p><strong>Hermanos:</strong> <span id="about-child-siblings">2 hermanos menores</span></p>
+                            <p><strong>Vive con:</strong> <span id="about-child-living">Madre y abuela</span></p>
+                            <p><strong>Idioma:</strong> <span id="about-child-language">Español</span></p>
+                            <p><strong>Estudia:</strong> <span id="about-child-studies">Sí, tercer grado</span></p>
+                            <p><strong>Código de apadrinamiento:</strong> <span id="about-child-code">NINO-2023-0875</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sección ACERCA DE MI HOGAR -->
+                <div class="about-section mt-4">
+                    <h3 class="section-title">ACERCA DE MI HOGAR</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Paredes de la casa:</strong> <span id="home-child-walls">Block y cemento</span></p>
+                            <p><strong>Techería de la casa:</strong> <span id="home-child-roof">Lamina galvanizada</span></p>
+                            <p><strong>Piso de la casa:</strong> <span id="home-child-floor">Cemento</span></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Fuente de agua:</strong> <span id="home-child-water">Tubería comunitaria</span></p>
+                            <p><strong>Acceso a internet:</strong> <span id="home-child-internet">No</span></p>
+                            <p><strong>Acceso a línea telefónica:</strong> <span id="home-child-phone">Sí, teléfono comunitario</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sección sobre la pobreza en Guatemala -->
+                <div class="about-section mt-4">
+                    <h3 class="section-title">CONTEXTO: POBREZA EN GUATEMALA</h3>
+                    <p>En Guatemala, el 59.3% de la población vive en situación de pobreza. En áreas rurales como la comunidad de Carlos, este porcentaje aumenta al 75%. Las familias con niños pequeños son las más afectadas, con limitado acceso a educación, salud y nutrición adecuada.</p>
+                    <p>La pobreza afecta especialmente a niños con discapacidades o problemas de salud, quienes enfrentan barreras adicionales para su desarrollo integral.</p>
+                    
+                    <!-- Espacio para imagen sobre pobreza en Guatemala -->
+                    <div class="text-center my-4">
+                        <img src="assets/img/Foto23.png" class="img-fluid rounded" alt="Imagen sobre pobreza en Guatemala">
+                        <p class="text-muted mt-2">Imagen que muestra las condiciones de vida en comunidades vulnerables de Guatemala</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <!-- Sección de impacto de donaciones -->
+                <div class="about-section">
+                    <h3 class="section-title">IMPACTO DE TU APOYO</h3>
+                    <p>Tu donación mensual de $39 proveerá a Carlos:</p>
+                    <ul>
+                        <li>Acceso a educación y materiales escolares</li>
+                        <li>Alimentación balanceada y suplementos nutricionales</li>
+                        <li>Atención médica y dental regular</li>
+                        <li>Programas de desarrollo comunitario</li>
+                        <li>Apoyo psicosocial y actividades recreativas</li>
+                    </ul>
+                    <p>Con tu apoyo, Carlos podrá romper el ciclo de pobreza y construir un futuro lleno de oportunidades.</p>
+                    
+                    <!-- Espacio para imagen de niño beneficiado -->
+                    <div class="text-center my-4">
+                        <img src="assets/img/Foto4.jpg" class="img-fluid rounded" alt="Niño beneficiado por apadrinamiento">
+                        <p class="text-muted mt-2">Imagen de un niño participando en programas de apadrinamiento</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button class="btn btn-donate btn-lg w-100">APADRINAR HOY</button>
+                    </div>
+                </div>
+                
+                <!-- Sección de uso de donativos -->
+                <div class="about-section mt-4">
+                    <h3 class="section-title">¿CÓMO SE UTILIZAN TUS DONATIVOS?</h3>
+                    <div class="progress mb-2">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40% Educación</div>
+                    </div>
+                    <div class="progress mb-2">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25% Alimentación</div>
+                    </div>
+                    <div class="progress mb-2">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20% Salud</div>
+                    </div>
+                    <div class="progress mb-2">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">15% Administración</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sección Cómo funciona el apadrinamiento -->
+    <section class="how-it-works mt-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Así es como funciona el apadrinamiento</h2>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="bi bi-heart-fill"></i>
+                        </div>
+                        <h4>¿Qué recibe el niño?</h4>
+                        <p>El niño recibe apoyo integral que incluye educación, alimentación balanceada, atención médica regular, y participación en programas de desarrollo comunitario que le brindan las herramientas necesarias para superarse.</p>
+                        
+                        <!-- Espacio para imagen de niños beneficiados -->
+                        <div class="text-center my-3">
+                            <img src="assets/img/Foto8.jpg" class="img-fluid rounded" alt="Niños participando en programas de apadrinamiento">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <h4>¿Qué recibe como padrino/madrina?</h4>
+                        <p>Como padrino, recibirás actualizaciones periódicas sobre el progreso del niño, cartas de agradecimiento, la oportunidad de comunicarte con él/ella, y reportes detallados del impacto de tu donación en su comunidad.</p>
+                        
+                        <!-- Espacio para imagen de interacción padrino-niño -->
+                        <div class="text-center my-3">
+                            <img src="assets/img/Foto7.jpg" class="img-fluid rounded" alt="Interacción entre padrino y niño">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <button class="btn btn-donate btn-lg">APADRINAR HOY</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <div id="site-footer"></div>
+    
+    <!-- Scripts de Bootstrap y JavaScript personalizado -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/catalogo.js"></script>
+</body>
+</html>
