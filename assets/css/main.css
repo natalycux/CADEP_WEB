@@ -299,4 +299,43 @@
     font-weight: 600;
 }
 
+/*
+ * =======================================================
+ * COMPONENTE: Botón flotante de WhatsApp
+ * =======================================================
+*/
+.whatsapp-fab {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: transform 0.2s ease-in-out;
+}
 
+.whatsapp-fab:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+/* Accesibilidad: Ocultar visualmente pero accesible para lectores de pantalla */
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
