@@ -1,0 +1,10 @@
+:root{ --hero-bg: linear-gradient(135deg,hwb(55 5% 1%) 0%, #f9fd0d 100%); }
+    .hero{
+      background: var(--hero-bg);
+      color:#fff; border-radius: 1rem;
+      padding: 3rem 1.5rem; margin-top: 1rem;
+    }
+    .contact-card{ border-radius: .85rem; }
+    .required::after{ content:" *"; color:#dc3545; }
+    .shadow-soft{ box-shadow: 0 10px 24px rgba(0,0,0,.07); }
+    .map-wrapper{ border-radius: .85rem; overflow:hidden; }
