@@ -1,0 +1,122 @@
+<!--
+    DOCUMENTACIÓN:
+    Este archivo muestra el catálogo de niños para apadrinar.
+    - La sección superior muestra un "niño destacado" cuyos datos son actualizados por JS.
+    - La sección principal `<div id="children-cards-container">` es llenada dinámicamente por la clase `ChildCatalog` en main.js.
+    - Las interacciones (clic en tarjeta, apadrinar, etc.) son controladas por `ChildCatalog`.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="sponsor_page_title">Vista de Apadrinamiento de Niños</title>
+    <!-- Incluye los CSS de Bootstrap y Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <!-- Vincula el archivo de estilos CSS externo -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/catalogo.css">
+    <link rel="stylesheet" href="assets/css/pagina.css"> <!-- Archivo CSS para los estilos específicos de esta página -->
+
+</head>
+<body>
+
+    <!-- =================================================================== -->
+    <!-- HEADER (inyectado por JavaScript) -->
+    <!-- =================================================================== -->
+    <div id="site-header"></div>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- =================================================================== -->
+            <!-- SECCIÓN NIÑO DESTACADO -->
+            <!-- Los datos de este niño se actualizan dinámicamente por `ChildCatalog`. -->
+            <!-- =================================================================== -->
+            <section class="py-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6 col-lg-5 text-center text-md-start mb-4 mb-md-0">
+                        <img src="assets/img/Foto5.jpg" id="main-child-img" class="img-fluid featured-child-img" alt="Alexander Juarez">
+                    </div>
+                    <div class="col-md-6 col-lg-7">
+                        <h1 class="display-4 fw-bold mb-3" data-i18n="sponsor_title">Te presentamos a <span id="main-child-name">Alexander Juarez</span></h1>
+                        <p class="lead" id="main-child-desc" data-i18n="sponsor_description">Con un ingreso familiar promedio de $597.00 al mes en su comunidad, las familias como la de <span id="main-child-name-desc">Alexander</span> apenas ganan lo suficiente para cubrir las necesidades básicas.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-star-fill text-warning me-2"></i><strong data-i18n="sponsor_age">Edad:</strong> <span id="main-child-age">15</span></li>
+                            <li><i class="bi bi-star-fill text-warning me-2"></i><strong data-i18n="sponsor_birthday">Fecha de cumpleaños:</strong> <span id="main-child-birthday">22/11/2009</span></li>
+                            <li><i class="bi bi-star-fill text-warning me-2"></i><strong data-i18n="sponsor_country">País:</strong> <span id="main-child-country">Guatemala</span></li>
+                        </ul>
+                        <p data-i18n="sponsor_impact">Solamente se requiere una persona para generar un cambio positivo y duradero en la vida de <span id="main-child-name2">Alexander</span>. Tu donación mensual de $39 es invertida en la vida de algunos de los niños más vulnerables del mundo.</p>
+                        <button id="featured-sponsor-btn" class="btn btn-danger btn-lg mt-3 rounded-pill px-4" data-i18n="sponsor_button">APADRINAR</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =================================================================== -->
+            <!-- SECCIÓN CATÁLOGO DE NIÑOS -->
+            <!-- Este contenedor es el objetivo de `ChildCatalog` para inyectar las tarjetas. -->
+            <!-- =================================================================== -->
+            <section class="py-5">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="h4 mb-0" data-i18n="sponsor_find_title">Encuentra un niño que necesita ser apoyado!</h2>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle rounded-pill" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="sponsor_filter">
+                            Buscar por: Tiepo de espera
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" data-i18n="sponsor_filter_option1">Tiempo de espera</a></li>
+                            <li><a class="dropdown-item" href="#" data-i18n="sponsor_filter_option2">Edad</a></li>
+                            <li><a class="dropdown-item" href="#" data-i18n="sponsor_filter_option3">Primer Nombre</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Contenedor para las tarjetas de los niños -->
+                <div id="children-cards-container" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+                    <!-- Las tarjetas se generarán aquí con JavaScript -->
+                </div>
+            </section>
+        </div>
+        
+        <!-- =================================================================== -->
+        <!-- SECCIÓN INFORMATIVA -->
+        <!-- =================================================================== -->
+        <div class="pink-bg-wrapper">
+            <div class="container">
+                <section class="apadrinamiento-section">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <h2 class="display-6 fw-bold" data-i18n="sponsor_whatis_title">¿Qué es el apadrinamiento de niños y jóvenes?</h2>
+                            <p class="lead" data-i18n="sponsor_whatis_desc1">El apadrinamiento establece una conexión personal entre dos personas —un padrino con el deseo de ayudar y un niño con el deseo de superarse a pesar de su situación económica—.</p>
+                            <p data-i18n="sponsor_whatis_desc2">Nuestro programa de apadrinamiento equipa a los niños y adolescentes con habilidades laborales y de vida esenciales para romper el círculo vicioso de la pobreza para siempre.</p>
+                        </div>
+                        <div class="col-md-6 text-center">
+                                <img src="assets/img/Foto4.jpg" class="img-fluid rounded shadow" alt="Imagen sobre apadrinamiento">
+                                <p class="mt-3 text-muted" data-i18n="sponsor_video_desc">
+                                opcional** un video de que es el padrinamiento y lo que eso ayuda
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- =================================================================== -->
+    <!-- FOOTER (inyectado por JavaScript) -->
+    <!-- =================================================================== -->
+    <div id="site-footer"></div>
+
+    <!-- Contenedores para los modales (inyectados por JavaScript) -->
+    <div id="donation-modal-container"></div>
+    <div id="payment-modal-container"></div>
+    
+    <!-- =================================================================== -->
+    <!-- SCRIPTS -->
+    <!-- =================================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

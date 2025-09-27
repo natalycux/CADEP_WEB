@@ -1,4 +1,5 @@
 <header>
+    <link rel="stylesheet" href="assets/css/whatsapp-button.css">
     <nav id="mainNavbar" class="navbar navbar-expand-lg bg-white navbar-light border-bottom sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
@@ -18,10 +19,17 @@
                     <li class="nav-item"><a class="nav-link" href="index.html#galeria">PENDIENTE</a></li>
                     <li class="nav-item"><a class="nav-link" href="pages/who-we-are.html">PENDIENTE</a></li>
                 </ul>
+                <!-- SELECTOR DE IDIOMA - AÑADE ESTO -->
+                    <div class="ms-3">
+                         <select id="languageSelector" class="form-select form-select-sm" onchange="i18n.changeLanguage()" style="width: 100px;">
+                                <option value="es">ES</option>
+                                <option value="en">EN</option>
+                            </select>
+                    </div>
 
                 <div class="d-flex align-items-center">
                     <!-- Usando tus clases personalizadas .btn-apadrinar y .btn-donar -->
-                    <a href="/pages/catalogo.html" class="btn btn-apadrinar me-2" role="button">
+                    <a href="Pagina.html" class="btn btn-apadrinar me-2" role="button">
                         APADRINAR
                     </a>
                     <button type="button" class="btn btn-donar" data-bs-toggle="modal" data-bs-target="#donationModal">
@@ -32,3 +40,8 @@
         </div>
     </nav>
 </header>
+<!-- Botón Flotante de WhatsApp -->
+<!-- REEMPLAZA 'TUNUMERO' con tu número de WhatsApp, incluyendo el código de país sin el '+' o '00' -->
+<a href="https://wa.me/50249530219" class="whatsapp-fab" target="_blank" aria-label="Contactar por WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+</a>
