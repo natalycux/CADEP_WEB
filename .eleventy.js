@@ -1,11 +1,11 @@
-// Importamos el plugin que acabamos de instalar
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+// Importamos el plugin correcto para RSS, que incluye el filtro 'slug'
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function(eleventyConfig) {
-  // Añadimos el plugin a Eleventy
-  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+  // Añadimos el plugin a Eleventy. Esto nos dará acceso al filtro 'slug'.
+  eleventyConfig.addPlugin(pluginRss);
   
-  // El resto de tu configuración...
+  // El resto de tu configuración (que ya estaba correcta)
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/styles");
   eleventyConfig.addPassthroughCopy("src/scripts");
@@ -20,7 +20,7 @@ module.exports = function(eleventyConfig) {
       output: "_site",
       layouts: "layouts",
       includes: "components",
-      data: "_data" // Buena práctica definir también la carpeta de datos
+      data: "_data"
     },
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk"
