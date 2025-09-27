@@ -143,6 +143,52 @@ class ChildProfilePage {
     _setTextContent(elementId, value, defaultValue = 'No especificado') { const element = document.getElementById(elementId); if (element) { element.textContent = value || defaultValue; } } 
 }
 
+/**
+ * @class SparkleWhatsAppButton
+ * @description Gestiona el botón flotante de WhatsApp con efecto de destellos.
+ */
+class SparkleWhatsAppButton {
+    constructor(phoneNumber, basePath, message = "Hola, me gustaría obtener más información.") {
+        this.phoneNumber = phoneNumber;
+        this.basePath = basePath;
+        this.message = message;
+        this.whatsappLink = `https://wa.me/${this.phoneNumber}?text=${encodeURIComponent(this.message)}`;
+        this._createButton();
+    }
+
+    _createButton() {
+        const buttonContainer = document.createElement('a');
+        buttonContainer.href = this.whatsappLink;
+        buttonContainer.target = '_blank';
+        buttonContainer.rel = 'noopener noreferrer';
+        buttonContainer.className = 'sparkle-whatsapp-button';
+        buttonContainer.setAttribute('aria-label', 'Contactar por WhatsApp');
+
+        const iconWrapper = document.createElement('div');
+        iconWrapper.className = 'icon-wrapper';
+
+        // Usar un icono de Bootstrap en lugar de una imagen
+        const whatsappIcon = document.createElement('i');
+        whatsappIcon.className = 'bi bi-whatsapp';
+        whatsappIcon.style.fontSize = '35px'; // Ajustar tamaño del icono
+
+        const sparklesContainer = document.createElement('div');
+        sparklesContainer.className = 'sparkles';
+
+        for (let i = 0; i < 5; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparklesContainer.appendChild(sparkle);
+        }
+
+        iconWrapper.appendChild(whatsappIcon);
+        buttonContainer.appendChild(iconWrapper);
+        buttonContainer.appendChild(sparklesContainer);
+
+        document.body.appendChild(buttonContainer);
+    }
+}
+
 // ===================================================================================
 // CLASE PRINCIPAL DE LA APLICACIÓN
 // ===================================================================================
@@ -173,6 +219,7 @@ class App {
         this.initModals();
         this.initCatalog();
         this.initProfilePage();
+        this.initWhatsAppButton();
     }
 
     /**
@@ -238,6 +285,13 @@ class App {
     initProfilePage() {
         const profilePage = new ChildProfilePage();
         profilePage.init();
+    }
+
+    /** Inicializa el botón flotante de WhatsApp. */
+    initWhatsAppButton() {
+        // BACKEND: El número de teléfono debería venir de una configuración o variable de entorno.
+        const phoneNumber = "50212345678"; // Reemplazar con el número de teléfono real.
+        const whatsAppButton = new SparkleWhatsAppButton(phoneNumber, this.basePath);
     }
 }
 
