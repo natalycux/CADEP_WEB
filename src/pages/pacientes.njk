@@ -1,0 +1,28 @@
+---
+title: "Conoce a Nuestros Pacientes"
+pagination:
+  data: pacientes.list
+  size: 5
+permalink: "/pacientes/{{ pagination.pageNumber }}/"
+---
+
+<h1>Conoce a Nuestros Pacientes</h1>
+
+<ul>
+  {% for paciente in pagination.items %}
+    <li>
+      <a href="/pacientes/{{ paciente.id }}/">
+        {{ paciente.fullName }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
+<nav>
+  {% if pagination.href.previous %}
+    <a href="{{ pagination.href.previous }}">Anterior</a>
+  {% endif %}
+  {% if pagination.href.next %}
+    <a href="{{ pagination.href.next }}">Siguiente</a>
+  {% endif %}
+</nav>

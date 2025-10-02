@@ -3,47 +3,25 @@ pagination:
   data: pacientes.list
   size: 1
   alias: paciente
-permalink: "/pacientes/{{ paciente.firstname_patient }}-{{ paciente.lastname_patient | slug }}/"
-layout: "base.html"
+permalink: "/pacientes/{{ paciente.id }}/"
 ---
 
-<style>
-    .main-content { padding-top: 100px; padding-bottom: 50px; background-color: #f8f9fa; }
-    .story-card { background-color: #ffffff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); overflow: hidden; }
-    .story-image img { width: 100%; height: 100%; object-fit: cover; }
-    .story-content { padding: 40px; }
-    .story-content h1 { font-weight: 700; color: #333; }
-    .key-info { list-style: none; padding: 0; }
-    .key-info li { margin-bottom: 10px; display: flex; align-items: center; }
-    .key-info i { color: #e63946; margin-right: 15px; font-size: 1.5rem; }
-</style>
+<h1>{{ paciente.fullName }}</h1>
 
-<main class="main-content">
-    <div class="container">
-        <div class="story-card">
-            <div class="row g-0">
-                <div class="col-lg-6 story-image">
-                    <img src="{{ paciente.photo_url_patient }}" alt="Foto de {{ paciente.firstname_patient }}">
-                </div>
-                <div class="col-lg-6">
-                    <div class="story-content">
-                        <h1>Conoce a {{ paciente.firstname_patient }} {{ paciente.lastname_patient }}</h1>
-                        <p class="lead">{{ paciente.reasonforconsultation_patient }}</p>
-                        
-                        <h4>Información Clave</h4>
-                        <ul class="key-info my-4">
-                            <li><i class="bi bi-person-fill"></i><div><strong>Género:</strong> {{ paciente.gender_patient }}</div></li>
-                            <li><i class="bi bi-calendar-event-fill"></i><div><strong>Fecha de Nacimiento:</strong> {{ paciente.birthdate_patient }}</div></li>
-                            <li><i class="bi bi-clock-history"></i><div><strong>Edad:</strong> {{ paciente.age_patient }} años</div></li>
-                        </ul>
+<p><strong>Edad:</strong> {{ paciente.age }} años</p>
+<p><strong>Género:</strong> {{ paciente.gender }}</p>
 
-                        <div class="donation-form mt-4">
-                          <p>Tu donación ayuda a cubrir los costos de las terapias para {{ paciente.firstname_patient }}.</p>
-                          <a href="#" class="btn btn-danger btn-lg">APOYAR AHORA</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</main>
+{% if paciente.area %}
+  <p><strong>Área:</strong> {{ paciente.area.name }}</p>
+{% endif %}
+
+{% if paciente.branch %}
+  <p><strong>Sucursal:</strong> {{ paciente.branch.name }}</p>
+{% endif %}
+
+{% if paciente.stats %}
+  <p><strong>Donaciones:</strong> {{ paciente.stats.totalDonations }}</p>
+  <p><strong>Monto recibido:</strong> Q{{ paciente.stats.totalAmountReceived }}</p>
+{% endif %}
+
+<a href="/pacientes/">← Volver al listado</a>
