@@ -1,30 +1,20 @@
-const EleventyFetch = require("@11ty/eleventy-fetch");
+const fetch = require("node-fetch");
 
 module.exports = async function () {
-  const API_URL = "http://localhost:3000/api/patients";
+  console.log("🌐 Obteniendo pacientes del backend...");
   try {
-    console.log("[11ty] Obteniendo datos de: Pacientes");
-    let response = await EleventyFetch(API_URL, {
-      duration: "1d",
-      type: "json"
-    });
+    const res = await fetch("http://localhost:3000/api/patients");
+    const json = await res.json();
 
-    if (response && response.data && Array.isArray(response.data.patients)) {
-      // 🔎 Extraer y mapear los pacientes
-      const patients = response.data.patients;
+    // Extraer pacientes desde la estructura real
+    const pacientes = json?.data?.patients || [];
 
-      console.log(`[11ty] Total pacientes recibidos: ${patients.length}`);
+    console.log(`✅ Pacientes recibidos: ${pacientes.length}`);
 
-      return {
-        list: patients // 👈 Eleventy usará esto en pacientes.njk
-      };
-    }
-
-    console.warn("[11ty] No se encontraron pacientes en la respuesta.");
-    return { list: [] };
-
-  } catch (error) {
-    console.error("[11ty] Error al obtener Pacientes:", error.message);
+    // Eleventy necesita un objeto
+    return { list: pacientes };
+  } catch (err) {
+    console.error("❌ Error al obtener pacientes:", err);
     return { list: [] };
   }
 };

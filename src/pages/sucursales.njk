@@ -1,26 +1,12 @@
 ---
-title: "Nuestras Sucursales"
-layout: "base.html"
-permalink: "/sucursales/"
+layout: base.njk
+title: Sucursales
+permalink: /sucursales/index.html
 ---
 
-<div class="container" style="padding-top: 100px; padding-bottom: 50px;">
-    <div class="text-center mb-5">
-        <h1>Nuestras Sucursales</h1>
-        <p class="lead">Encuentra el centro de atención CADEP más cercano a ti.</p>
-    </div>
-    <div class="row g-4">
-        {# CORRECCIÓN: Se itera sobre sucursales.list #}
-        {%- for sucursal in sucursales.list -%}
-            <div class="col-md-6">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h4 class="card-title">{{ sucursal.name_branch }}</h4>
-                        <p class="card-text"><i class="bi bi-telephone-fill text-muted me-2"></i>{{ sucursal.phone_branch }}</p>
-                        <p class="card-text"><i class="bi bi-geo-alt-fill text-muted me-2"></i>{{ sucursal.municipality_name }}, {{ sucursal.department_name }}</p>
-                    </div>
-                </div>
-            </div>
-        {%- endfor -%}
-    </div>
-</div>
+<h1>Sucursales</h1>
+<ul>
+  {% for sucursal in sucursales %}
+    <li>{{ sucursal.nombre }} - {{ sucursal.direccion }}</li>
+  {% endfor %}
+</ul>

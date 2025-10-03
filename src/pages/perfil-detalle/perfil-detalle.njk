@@ -1,0 +1,29 @@
+---
+layout: base.njk
+pagination:
+  data: pacientes.list
+  size: 1
+  alias: paciente
+---
+
+<section class="paciente-detalle">
+  <div class="card-paciente mx-auto" style="max-width: 600px;">
+    <h1>Perfil de {{ paciente.nombre }}</h1>
+
+    {% if paciente.foto %}
+      <img src="http://localhost:3000{{ paciente.foto }}"
+           alt="{{ paciente.nombre }}"
+           class="img-fluid rounded mb-3"
+           style="max-height: 250px; object-fit: cover;">
+    {% endif %}
+
+    <p><strong>CUI:</strong> {{ paciente.cui }}</p>
+    <p><strong>Fecha de nacimiento:</strong> {{ paciente.fecha_nacimiento }}</p>
+    <p><strong>Sexo:</strong> {{ paciente.sexo }}</p>
+    <p><strong>Dirección:</strong> {{ paciente.direccion }}</p>
+    <p><strong>Teléfono:</strong> {{ paciente.telefono }}</p>
+    <p><strong>Correo:</strong> {{ paciente.correo }}</p>
+
+    <a href="/pacientes/" class="btn btn-primary mt-3">← Volver a la lista</a>
+  </div>
+</section>

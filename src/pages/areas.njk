@@ -1,23 +1,12 @@
 ---
-title: "Áreas de Atención"
-layout: "base.html"
-permalink: "/areas/"
+layout: base.njk
+title: Áreas
+permalink: /areas/index.html
 ---
-<div class="container" style="padding-top: 100px; padding-bottom: 50px;">
-    <div class="text-center mb-5">
-        <h1>Nuestras Áreas de Atención</h1>
-        <p class="lead">Un enfoque integral para el bienestar de nuestros pacientes.</p>
-    </div>
-    <div class="list-group">
-        {# CORRECCIÓN: Se itera sobre areas.list #}
-        {%- for area in areas.list -%}
-            <div class="list-group-item">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">{{ area.name_area }}</h5>
-                    <small>Duración: {{ area.duration_area }}</small>
-                </div>
-                <p class="mb-1">{{ area.description_area }}</p>
-            </div>
-        {%- endfor -%}
-    </div>
-</div>
+
+<h1>Áreas Médicas</h1>
+<ul>
+  {% for area in areas %}
+    <li>{{ area.nombre }}</li>
+  {% endfor %}
+</ul>

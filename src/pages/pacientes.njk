@@ -1,28 +1,22 @@
 ---
-title: "Conoce a Nuestros Pacientes"
-pagination:
-  data: pacientes.list
-  size: 5
-permalink: "/pacientes/{{ pagination.pageNumber }}/"
+layout: base.njk
+title: Lista de Pacientes
+permalink: "/pacientes/index.html"
 ---
 
-<h1>Conoce a Nuestros Pacientes</h1>
+<h1>Lista de Pacientes</h1>
 
-<ul>
-  {% for paciente in pagination.items %}
-    <li>
-      <a href="/pacientes/{{ paciente.id }}/">
-        {{ paciente.fullName }}
-      </a>
-    </li>
-  {% endfor %}
+<ul class="list-group">
+  {% if pacientes and pacientes.list %}
+    {% for paciente in pacientes.list %}
+      <li class="list-group-item">
+        <strong>{{ paciente.fullName }}</strong>
+        ({{ paciente.gender }}, {{ paciente.age }} años)  
+        - Área: {{ paciente.area.name }}  
+        - Sede: {{ paciente.branch.name }}
+      </li>
+    {% endfor %}
+  {% else %}
+    <li class="list-group-item">No hay pacientes disponibles.</li>
+  {% endif %}
 </ul>
-
-<nav>
-  {% if pagination.href.previous %}
-    <a href="{{ pagination.href.previous }}">Anterior</a>
-  {% endif %}
-  {% if pagination.href.next %}
-    <a href="{{ pagination.href.next }}">Siguiente</a>
-  {% endif %}
-</nav>

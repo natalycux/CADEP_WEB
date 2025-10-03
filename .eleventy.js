@@ -1,28 +1,31 @@
-// Importamos el plugin correcto para RSS, que incluye el filtro 'slug'
+// .eleventy.js
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function(eleventyConfig) {
-  // Añadimos el plugin a Eleventy. Esto nos dará acceso al filtro 'slug'.
   eleventyConfig.addPlugin(pluginRss);
-  
-  // El resto de tu configuración (que ya estaba correcta)
-  eleventyConfig.addPassthroughCopy("src/assets");
-  eleventyConfig.addPassthroughCopy("src/styles");
-  eleventyConfig.addPassthroughCopy("src/scripts");
 
-  eleventyConfig.addFilter("toJSON", function(value) {
-    return JSON.stringify(value);
-  });
+  // Copia estáticos a _site
+  // ✅ si los CSS están dentro de src/styles
+  eleventyConfig.addPassthroughCopy({ "src/styles": "styles" });
+  eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  eleventyConfig.addPassthroughCopy({ "src/scripts": "scripts" });
+
+  // ✅ por si aún tienes una carpeta styles en la raíz del repo
+  eleventyConfig.addPassthroughCopy({ "styles": "styles" });
+
+  eleventyConfig.addFilter("toJSON", (v) => JSON.stringify(v, null, 2));
 
   return {
     dir: {
       input: "src",
       output: "_site",
-      layouts: "layouts",
       includes: "components",
-      data: "_data"
+      layouts: "layouts",
+      data: "_data",
     },
+    templateFormats: ["njk", "html", "md"],
     htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk"
+    markdownTemplateEngine: "njk",
+    pathPrefix: "/",
   };
 };
