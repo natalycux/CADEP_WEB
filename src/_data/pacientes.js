@@ -1,20 +1,20 @@
+// src/_data/pacientes.js
 const fetch = require("node-fetch");
 
 module.exports = async function () {
   console.log("🌐 Obteniendo pacientes del backend...");
-  try {
-    const res = await fetch("http://localhost:3000/api/patients");
-    const json = await res.json();
+  const res = await fetch("http://localhost:3000/api/patients");
+  const json = await res.json();
 
-    // Extraer pacientes desde la estructura real
-    const pacientes = json?.data?.patients || [];
-
-    console.log(`✅ Pacientes recibidos: ${pacientes.length}`);
-
-    // Eleventy necesita un objeto
-    return { list: pacientes };
-  } catch (err) {
-    console.error("❌ Error al obtener pacientes:", err);
+  if (!json.success || !json.data || !json.data.patients) {
     return { list: [] };
   }
+
+  // Quitar duplicados usando un Map
+  const pacientesUnicos = [
+    ...new Map(json.data.patients.map(p => [p.id, p])).values()
+  ];
+
+  console.log("✅ Pacientes únicos procesados:", pacientesUnicos.length);
+  return { list: pacientesUnicos };
 };

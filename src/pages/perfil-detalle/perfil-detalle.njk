@@ -4,26 +4,39 @@ pagination:
   data: pacientes.list
   size: 1
   alias: paciente
+permalink: "pacientes/{{ paciente.id }}/index.html"
 ---
 
-<section class="paciente-detalle">
-  <div class="card-paciente mx-auto" style="max-width: 600px;">
-    <h1>Perfil de {{ paciente.nombre }}</h1>
+<section class="paciente-detalle container my-5">
+  <div class="row">
+    <!-- Foto del paciente -->
+    <div class="col-md-6">
+      {% if paciente.photoUrl %}
+        <img src="http://localhost:3000{{ paciente.photoUrl }}"
+             alt="{{ paciente.fullName }}"
+             class="img-fluid rounded shadow">
+      {% else %}
+        <img src="/assets/img/default-user.png"
+             alt="Sin foto"
+             class="img-fluid rounded shadow">
+      {% endif %}
+    </div>
 
-    {% if paciente.foto %}
-      <img src="http://localhost:3000{{ paciente.foto }}"
-           alt="{{ paciente.nombre }}"
-           class="img-fluid rounded mb-3"
-           style="max-height: 250px; object-fit: cover;">
-    {% endif %}
+    <!-- Información -->
+    <div class="col-md-6">
+      <h1>Conoce a {{ paciente.fullName }}</h1>
+      <p><strong>Edad:</strong> {{ paciente.age }} años</p>
+      <p><strong>Sexo:</strong> {{ paciente.gender }}</p>
+      <p><strong>Área:</strong> {{ paciente.area.name }}</p>
+      <p><strong>Sede:</strong> {{ paciente.branch.name }}</p>
+      <p><strong>Departamento:</strong> {{ paciente.location.department.name }}</p>
+      <p><strong>Municipio:</strong> {{ paciente.location.municipality.name }}</p>
+      
+      <!-- Extra -->
+      <h4>Cómo lo ayuda CADEP</h4>
+      <p>En CADEP recibe terapias y apoyo médico según el área de especialidad asignada.</p>
 
-    <p><strong>CUI:</strong> {{ paciente.cui }}</p>
-    <p><strong>Fecha de nacimiento:</strong> {{ paciente.fecha_nacimiento }}</p>
-    <p><strong>Sexo:</strong> {{ paciente.sexo }}</p>
-    <p><strong>Dirección:</strong> {{ paciente.direccion }}</p>
-    <p><strong>Teléfono:</strong> {{ paciente.telefono }}</p>
-    <p><strong>Correo:</strong> {{ paciente.correo }}</p>
-
-    <a href="/pacientes/" class="btn btn-primary mt-3">← Volver a la lista</a>
+      <a href="/pacientes/" class="btn btn-primary mt-3">← Volver a la lista</a>
+    </div>
   </div>
 </section>

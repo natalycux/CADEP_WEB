@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CADEP</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="/styles/header.css">
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+  <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="/">
+        <img src="/assets/images/LogoCadep2.png" alt="CADEP Logo" height="45" class="me-2" />
+        <span class="fw-bold">CADEP</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="/#historia">Historia</a></li>
+          <li class="nav-item"><a class="nav-link" href="/areas/">Áreas</a></li>
+          <li class="nav-item"><a class="nav-link" href="/sucursales/">Sucursales</a></li>
+          <li class="nav-item"><a class="nav-link" href="/pacientes/">Pacientes</a></li>
+        </ul>
+        <div class="d-flex ms-lg-3">
+          <a href="/pacientes/" class="btn btn-danger" id="btnDonarHeader">
+            <i class="bi bi-heart-fill me-1"></i> APOYAR
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+  <!-- Contenido principal -->
+  <main class="pt-5 mt-4">
+    
+<section class="paciente-detalle container my-5">
+  <div class="row">
+    <!-- Foto del paciente -->
+    <div class="col-md-6">
+      
+        <img src="/assets/img/default-user.png"
+             alt="Sin foto"
+             class="img-fluid rounded shadow">
+      
+    </div>
+
+    <!-- Información -->
+    <div class="col-md-6">
+      <h1>Conoce a Patricia Ramírez</h1>
+      <p><strong>Edad:</strong> 35 años</p>
+      <p><strong>Sexo:</strong> Femenino</p>
+      <p><strong>Área:</strong> Cardiología</p>
+      <p><strong>Sede:</strong> CADEP Central</p>
+      <p><strong>Departamento:</strong> Guatemala</p>
+      <p><strong>Municipio:</strong> Guatemala</p>
+      
+      <!-- Extra -->
+      <h4>Cómo lo ayuda CADEP</h4>
+      <p>En CADEP recibe terapias y apoyo médico según el área de especialidad asignada.</p>
+
+      <a href="/pacientes/" class="btn btn-primary mt-3">← Volver a la lista</a>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-5 section-light border-top">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <img src="/assets/images/LogoCadep2.png" alt="CADEP" height="45">
+          <span class="fw-semibold">CADEP</span>
+        </div>
+        <div class="d-flex gap-3 fs-5">
+          <a class="text-dark" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a class="text-dark" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+        <small class="text-muted d-block mt-3">© <span id="year"></span> CADEP</small>
+      </div>
+      <div class="col-md-3">
+        <h6 class="fw-semibold">ÚNETE</h6>
+        <ul class="list-unstyled small m-0">
+          <li><a class="text-decoration-none text-muted" href="/pages/apadrinar.html">Donar</a></li>
+          <li><a class="text-decoration-none text-muted" href="/#historia">Nuestra Misión</a></li>
+          <li><a class="text-decoration-none text-muted" href="/pages/apadrinar.html">¿Cómo apadrinar?</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h6 class="fw-semibold">ENLACES</h6>
+        <ul class="list-unstyled small m-0">
+          <li><a class="text-decoration-none text-muted" href="#">Contacto</a></li>
+          <li><a class="text-decoration-none text-muted" href="#">Preguntas frecuentes</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</footer>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Scripts propios -->
+  <script src="/scripts/header.js"></script>
+  <script src="/scripts/main.js"></script>
+</body>
+</html>
