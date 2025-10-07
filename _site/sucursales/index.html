@@ -18,27 +18,24 @@
 <body>
   <!-- Header -->
   <header>
-  <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="/">
-        <img src="/assets/images/LogoCadep2.png" alt="CADEP Logo" height="45" class="me-2" />
-        <span class="fw-bold">CADEP</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Menú">
+      <a class="navbar-brand fw-bold" href="/">CADEP</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="/#historia">Historia</a></li>
-          <li class="nav-item"><a class="nav-link" href="/areas/">Áreas</a></li>
-          <li class="nav-item"><a class="nav-link" href="/sucursales/">Sucursales</a></li>
-          <li class="nav-item"><a class="nav-link" href="/pacientes/">Pacientes</a></li>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="/" class="nav-link">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-apadrinar me-2" onclick="window.location.href='/pacientes/'">
+              APADRINAR
+            </button>
+          </li>
         </ul>
-        <div class="d-flex ms-lg-3">
-          <a href="/pacientes/" class="btn btn-danger" id="btnDonarHeader">
-            <i class="bi bi-heart-fill me-1"></i> APOYAR
-          </a>
-        </div>
       </div>
     </div>
   </nav>

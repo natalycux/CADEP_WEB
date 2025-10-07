@@ -1,12 +1,16 @@
 ---
 layout: base.njk
-title: Áreas
-permalink: /areas/index.html
+title: Áreas Médicas
+permalink: "/areas/"
 ---
 
 <h1>Áreas Médicas</h1>
+<p>Conoce nuestras especialidades disponibles en CADEP.</p>
+
 <ul>
   {% for area in areas %}
-    <li>{{ area.nombre }}</li>
+    <li>{{ area.nombre_area }} - {{ area.descripcion_area }}</li>
+  {% else %}
+    <li>No hay áreas registradas.</li>
   {% endfor %}
 </ul>

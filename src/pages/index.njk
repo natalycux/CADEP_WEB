@@ -1,20 +1,21 @@
 ---
 layout: base.njk
-title: Inicio
 permalink: "/"
+title: CADEP - Centro de Atención y Desarrollo de la Persona
 ---
 
-<h1>Bienvenido a CADEP</h1>
-<p>Centro de Atención y Desarrollo de la Persona</p>
+{% include "landing/header.njk" %}
+{% include "landing/donation-modal.njk" %}
+{% include "landing/payment-modal.njk" %}
 
-<h2>Áreas Médicas</h2>
-<p>Conoce nuestras especialidades disponibles en CADEP.</p>
-<p><a href="/areas/">Ver áreas</a></p>
+<section class="hero bg-light text-center py-5">
+  <div class="container">
+    <h1 class="display-5 fw-bold">Centro de Atención y Desarrollo de la Persona</h1>
+    <p class="lead mb-4">Apoya nuestra misión de brindar atención integral a niños, jóvenes y adultos.</p>
+    <a href="/pacientes/" class="btn btn-danger btn-lg">
+      ❤️ Apadrinar
+    </a>
+  </div>
+</section>
 
-<h2>Sucursales</h2>
-<p>Encuentra el centro más cercano a tu comunidad.</p>
-<p><a href="/sucursales/">Ver sucursales</a></p>
-
-<h2>Pacientes</h2>
-<p>Consulta y gestiona la información de pacientes.</p>
-<p><a href="/pacientes/">Ver pacientes</a></p>
+{% include "landing/footer.njk" %}
