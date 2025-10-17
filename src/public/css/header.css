@@ -1,0 +1,21 @@
+.btn-apadrinar {
+  background-color: #D93025;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-apadrinar:hover {
+  background-color: #b71c1c;
+}
+
+#mainNavbar {
+  transition: background-color 0.3s ease;
+}
+
+#mainNavbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

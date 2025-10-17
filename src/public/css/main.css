@@ -1,0 +1,266 @@
+/* ==========================
+   ESTILOS GENERALES
+========================== */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
+  color: #333;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.section-beige {
+  background-color: #fdf7f1;
+}
+
+.section-dark {
+  background-color: #f6f6f6;
+}
+
+/* ==========================
+   HEADER
+========================== */
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #d93025;
+}
+
+.btn-apadrinar {
+  background-color: #ffc107;
+  color: #000;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+}
+
+.btn-apadrinar:hover {
+  background-color: #e0a800;
+}
+
+.btn-donar {
+  background-color: #5ac8fa;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-donar:hover {
+  background-color: #009adf;
+}
+
+/* ==========================
+   HERO / CARRUSEL PRINCIPAL
+========================== */
+.hero-carousel-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-image {
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #fff;
+  opacity: 0.7;
+}
+
+.carousel-indicators .active {
+  opacity: 1;
+}
+
+/* ==========================
+   FORMULARIO DE DONACIÓN FLOTANTE
+========================== */
+.donation-form-overlay {
+  position: absolute;
+  top: 50%;
+  right: 7%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 360px;
+}
+
+.donate-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+  border: none;
+}
+
+.donate-card .card-body {
+  padding: 2rem;
+}
+
+.donate-card .card-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Botones del formulario */
+.donate-card .btn-outline-danger {
+  border-width: 2px;
+  font-weight: 600;
+  color: #d93025;
+}
+
+.donate-card .btn-outline-danger:hover,
+.donate-card .btn-outline-danger.active {
+  background-color: #d93025;
+  color: #fff;
+  border-color: #d93025;
+}
+
+.donate-card .btn-danger {
+  background-color: #d93025;
+  border: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.donate-card .btn-danger:hover {
+  background-color: #b71c1c;
+}
+
+.donate-card .input-group-text {
+  background-color: #fff;
+  font-weight: 500;
+}
+
+.donate-card .amount {
+  min-width: 60px;
+  font-weight: 600;
+}
+
+.donate-card img {
+  max-width: 80%;
+  margin-top: 0.8rem;
+}
+
+/* ==========================
+   SECCIÓN HISTORIA
+========================== */
+#historia img {
+  border-radius: 10px;
+}
+
+#historia h5 {
+  font-weight: 700;
+}
+
+/* ==========================
+   SECCIÓN SERVICIOS
+========================== */
+.service-item {
+  border: 1px solid #eee;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.service-item i {
+  color: #007bff;
+}
+
+/* ==========================
+   SECCIÓN GALERÍA
+========================== */
+#galeria img {
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+#galeria .carousel-item {
+  transition: transform 1s ease;
+}
+
+/* ==========================
+   EVENTO RECIENTE
+========================== */
+#latest img {
+  border-radius: 10px;
+}
+
+#latest h2 {
+  font-weight: 700;
+}
+
+#latest .btn-light {
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 0.7rem 1.5rem;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+footer {
+  background-color: #fafafa;
+  color: #333;
+}
+
+footer h6 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 992px) {
+  .donation-form-overlay {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: 500px;
+    margin: 2rem auto;
+  }
+
+  .carousel-image {
+    height: 75vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-image {
+    height: 60vh;
+  }
+
+  .donate-card .card-body {
+    padding: 1.5rem;
+  }
+
+  .donation-form-overlay {
+    margin-top: 1rem;
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,21 @@
+{% extends "layouts/base.njk" %}
+{% block content %}
+<section class="pacientes-listado p-5">
+  <h1 class="titulo-seccion">Niñas y niños para apadrinar</h1>
+  <p class="descripcion-seccion">Tu apoyo sostiene terapias y acompañamiento.</p>
+  <div class="row">
+    {% for p in pacientes %}
+    <div class="col-md-3 mb-3">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{ p.fullName or p.nombre or ('Paciente #' + p.id) }}</h5>
+          <p><strong>ID:</strong> {{ p.id }}</p>
+          {% if p.edad %}<p><strong>Edad:</strong> {{ p.edad }}</p>{% endif %}
+          <a href="/pacientes/{{ p.id }}" class="btn btn-outline-primary btn-sm">Ver detalle</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
